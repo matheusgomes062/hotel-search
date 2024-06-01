@@ -25,7 +25,7 @@ const handleSubmit = () => {
       @submit.prevent="handleSubmit"
       class="space-y-6 flex flex-row flex-wrap items-end justify-between"
     >
-      <div class="form-group">
+      <div class="form-group w-full md:w-auto">
         <label for="destination" class="block text-sm font-medium text-gray-700"
           >Destination:</label
         >
@@ -35,22 +35,22 @@ const handleSubmit = () => {
           v-model="destination"
           required
           placeholder="Enter destination"
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
       </div>
 
-      <div class="form-group">
+      <div class="form-group w-full md:w-auto">
         <label for="checkIn" class="block text-sm font-medium text-gray-700">Check-In Date:</label>
         <input
           type="date"
           id="checkIn"
           v-model="checkInDate"
           required
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
       </div>
 
-      <div class="form-group">
+      <div class="form-group w-full md:w-auto">
         <label for="checkOut" class="block text-sm font-medium text-gray-700"
           >Check-Out Date:</label
         >
@@ -59,11 +59,11 @@ const handleSubmit = () => {
           id="checkOut"
           v-model="checkOutDate"
           required
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
       </div>
 
-      <div class="form-group grid grid-cols-2 gap-4">
+      <div class="form-group w-full md:w-auto grid grid-cols-2 gap-4">
         <div>
           <label for="roomCount" class="block text-sm font-medium text-gray-700">Rooms:</label>
           <input
@@ -72,7 +72,7 @@ const handleSubmit = () => {
             v-model="roomCount"
             min="1"
             required
-            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
+            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
           />
         </div>
 
@@ -84,7 +84,7 @@ const handleSubmit = () => {
             v-model="guestCount"
             min="1"
             required
-            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
+            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
           />
         </div>
       </div>

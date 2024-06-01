@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HotelSearch from '@/components/HotelSearch.vue'
+import HotelListFilters from '@/components/HotelListFilters.vue'
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import HotelSearch from '@/components/HotelSearch.vue'
         <div class="sidebar">
           <p>Search hotels</p>
           <HotelSearch />
+          <HotelListFilters />
         </div>
       </div>
     </div>
