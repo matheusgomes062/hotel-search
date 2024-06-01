@@ -12,3 +12,15 @@ export interface FilterField {
   min?: number
   max?: number
 }
+
+export interface Hotel {
+  id: number
+  name: string
+  price: number
+  city: string
+  rating: number
+  imageUrl: string
+  location: string
+  stars: number
+  availability: boolean
+}
