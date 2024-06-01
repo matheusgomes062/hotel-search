@@ -20,8 +20,11 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div class="max-w-md mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
-    <form @submit.prevent="handleSubmit" class="space-y-6">
+  <div class="mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
+    <form
+      @submit.prevent="handleSubmit"
+      class="space-y-6 flex flex-row flex-wrap items-end justify-between"
+    >
       <div class="form-group">
         <label for="destination" class="block text-sm font-medium text-gray-700"
           >Destination:</label
@@ -32,7 +35,7 @@ const handleSubmit = () => {
           v-model="destination"
           required
           placeholder="Enter destination"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-primary focus:ring-opacity-50 outline-none border-none"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
         />
       </div>
 
@@ -43,7 +46,7 @@ const handleSubmit = () => {
           id="checkIn"
           v-model="checkInDate"
           required
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
         />
       </div>
 
@@ -56,7 +59,7 @@ const handleSubmit = () => {
           id="checkOut"
           v-model="checkOutDate"
           required
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
         />
       </div>
 
@@ -69,7 +72,7 @@ const handleSubmit = () => {
             v-model="roomCount"
             min="1"
             required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
           />
         </div>
 
@@ -81,17 +84,19 @@ const handleSubmit = () => {
             v-model="guestCount"
             min="1"
             required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none border-none"
           />
         </div>
       </div>
 
-      <button
-        type="submit"
-        class="w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-      >
-        Search
-      </button>
+      <div class="h-12">
+        <button
+          type="submit"
+          class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
+        >
+          Search
+        </button>
+      </div>
     </form>
   </div>
 </template>
