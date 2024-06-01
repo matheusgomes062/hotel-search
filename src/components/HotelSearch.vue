@@ -20,7 +20,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div class="mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
+  <div class="p-8 bg-white shadow-lg rounded-lg mt-10">
     <form
       @submit.prevent="handleSubmit"
       class="space-y-6 flex flex-row flex-wrap items-end justify-between"

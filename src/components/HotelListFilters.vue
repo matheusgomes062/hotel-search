@@ -1,10 +1,14 @@
 <template>
-  <div class="p-4 bg-gray-100 rounded-lg">
+  <div class="p-4 bg-gray-100 rounded-b-lg">
     <form @submit.prevent="emitFilterChange">
       <div class="flex flex-wrap flex-row items-end gap-4 justify-between">
         <div class="w-full md:w-auto">
           <label for="order" class="block mb-2 font-medium">Order By:</label>
-          <select id="order" v-model="selectedOrder" class="w-full p-2 border rounded-md">
+          <select
+            id="order"
+            v-model="selectedOrder"
+            class="w-full p-2 border rounded-md outline-none"
+          >
             <option v-for="option in orderOptions" :key="option.value" :value="option.value">
               {{ option.text }}
             </option>
