@@ -45,19 +45,18 @@ const hotelsData = ref<Hotel[]>([
 
 <template>
   <div>
-    <div class="banner">
-      <div class="container">
-        <h1 class="logo-font">Hotel Search Challenge</h1>
-        <p>Search the best hotel for your trip!</p>
-      </div>
+    <div class="banner bg-indigo-300 rounded-lg py-16 flex flex-col items-center text-center">
+      <h1 class="logo-font text-2xl font-bold text-gray-800">Hotel Search Challenge</h1>
+      <p class="text-gray-600 mb-4">Search the best hotel for your trip!</p>
     </div>
 
     <div class="container page">
       <div class="row">
-        <div class="sidebar">
-          <h2>Search hotels</h2>
-          <HotelSearch />
-          <HotelListFilters />
+        <div class="gap-2 flex flex-col">
+          <div>
+            <HotelSearch />
+            <HotelListFilters />
+          </div>
           <HotelListResult :hotels="hotelsData" />
         </div>
       </div>

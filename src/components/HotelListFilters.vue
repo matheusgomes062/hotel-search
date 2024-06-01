@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 bg-gray-100 rounded-lg">
+  <div class="p-4 bg-gray-100 rounded-b-lg">
     <form @submit.prevent="emitFilterChange">
       <div class="flex flex-wrap flex-row items-end gap-4 justify-between">
         <div class="w-full md:w-auto">

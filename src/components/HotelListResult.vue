@@ -12,7 +12,11 @@
           </div>
           <div class="flex justify-between items-center mt-4">
             <span class="text-gray-700 font-semibold">{{ hotel.price }} per night</span>
-            <button class="btn btn-primary px-3 py-2">Compare</button>
+            <button
+              class="px-4 h-8 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
+            >
+              Compare
+            </button>
           </div>
         </div>
       </div>
