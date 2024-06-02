@@ -1,4 +1,3 @@
-// store/hotels.ts
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { Hotel } from '@/types'
@@ -8,14 +7,15 @@ export const useHotelsStore = defineStore({
   state: () => ({
     hotels: ref<Hotel[]>([]),
     isLoading: ref(false),
-    hasError: ref(false)
+    hasError: ref(false),
+    compareList: ref<Hotel[]>([]) // State for hotels to compare
   }),
   actions: {
     async fetchHotels() {
       this.isLoading = true
       this.hasError = false
       try {
-        const response = await fetch('https://api.example.com/hotels')
+        const response = await fetch('api/hotels.json')
         if (!response.ok) {
           throw new Error('Failed to fetch hotels')
         }
@@ -27,9 +27,18 @@ export const useHotelsStore = defineStore({
       } finally {
         this.isLoading = false
       }
+    },
+    addHotelToCompare(hotel: Hotel) {
+      if (!this.compareList.includes(hotel)) {
+        this.compareList.push(hotel)
+      }
+    },
+    removeHotelFromCompare(hotel: Hotel) {
+      this.compareList = this.compareList.filter((h) => h !== hotel)
     }
   },
   getters: {
-    hotelsCount: (state) => state.hotels.length
+    hotelsCount: (state) => state.hotels.length,
+    compareCount: (state) => state.compareList.length
   }
 })

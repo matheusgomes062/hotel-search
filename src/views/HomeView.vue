@@ -5,12 +5,21 @@ import HotelListResult from '@/components/HotelListResult.vue'
 
 import { onMounted } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
+import type { Hotel } from '@/types'
 
 const hotelsStore = useHotelsStore()
 
 onMounted(() => {
   hotelsStore.fetchHotels()
 })
+
+const addToCompare = (hotel: Hotel) => {
+  hotelsStore.addHotelToCompare(hotel)
+}
+
+const removeFromCompare = (hotel: Hotel) => {
+  hotelsStore.removeHotelFromCompare(hotel)
+}
 </script>
 
 <template>
@@ -34,7 +43,11 @@ onMounted(() => {
             <p>Error loading hotels. Please try again later.</p>
           </div>
           <div v-else>
-            <HotelListResult :hotels="hotelsStore.hotels" />
+            <HotelListResult
+              :hotels="hotelsStore.hotels"
+              @add-to-compare="addToCompare"
+              @remove-from-compare="removeFromCompare"
+            />
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@
       <div class="flex justify-between items-center mt-4">
         <span class="text-gray-700 font-semibold">{{ hotel.price }} per night</span>
         <button
+          @click="() => addToCompare(hotel)"
           class="px-4 h-8 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
         >
           Compare
@@ -24,21 +25,15 @@
 import type { Hotel } from '@/types'
 import { StarIcon } from 'lucide-vue-next'
 
-// Rest of the code...
-
 const props = defineProps<{
   hotel: Hotel
 }>()
 
-const emit = defineEmits(['compareHotel'])
+const emit = defineEmits(['addToCompare'])
 
-const compareHotel = (hotel: Hotel) => {
-  emit('compareHotel', hotel)
+const addToCompare = (hotel: Hotel) => {
+  emit('addToCompare', hotel)
 }
 </script>
 
-<style scoped>
-.btn {
-  /* Add your button styles here */
-}
-</style>
+<style scoped></style>
