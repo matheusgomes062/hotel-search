@@ -3,33 +3,13 @@ import HotelSearch from '@/components/HotelSearch.vue'
 import HotelListFilters from '@/components/HotelListFilters.vue'
 import HotelListResult from '@/components/HotelListResult.vue'
 
-import { onMounted, ref } from 'vue'
-import type { Hotel } from '@/types'
+import { onMounted } from 'vue'
+import { useHotelsStore } from '@/stores/hotels'
 
-const hotelsData = ref<Hotel[]>([])
-const isLoading = ref(false)
-const hasError = ref(false)
-
-const fetchHotels = async () => {
-  isLoading.value = true
-  hasError.value = false
-  try {
-    const response = await fetch('/api/hotels.json')
-    if (!response.ok) {
-      throw new Error('Failed to fetch hotels')
-    }
-    const data: Hotel[] = await response.json()
-    hotelsData.value = data
-  } catch (error) {
-    console.error('Error fetching hotels:', error)
-    hasError.value = true
-  } finally {
-    isLoading.value = false
-  }
-}
+const hotelsStore = useHotelsStore()
 
 onMounted(() => {
-  fetchHotels()
+  hotelsStore.fetchHotels()
 })
 </script>
 
@@ -47,14 +27,14 @@ onMounted(() => {
             <HotelSearch />
             <HotelListFilters />
           </div>
-          <div v-if="isLoading" class="text-center">
+          <div v-if="hotelsStore.isLoading" class="text-center">
             <p>Loading hotels...</p>
           </div>
-          <div v-else-if="hasError" class="text-center text-red-500">
+          <div v-else-if="hotelsStore.hasError" class="text-center text-red-500">
             <p>Error loading hotels. Please try again later.</p>
           </div>
           <div v-else>
-            <HotelListResult :hotels="hotelsData" />
+            <HotelListResult :hotels="hotelsStore.hotels" />
           </div>
         </div>
       </div>
