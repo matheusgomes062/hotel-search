@@ -3,55 +3,34 @@ import HotelSearch from '@/components/HotelSearch.vue'
 import HotelListFilters from '@/components/HotelListFilters.vue'
 import HotelListResult from '@/components/HotelListResult.vue'
 
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import type { Hotel } from '@/types'
 
-const hotelsData = ref<Hotel[]>([
-  {
-    id: 1,
-    name: 'Hotel A',
-    location: 'Location A',
-    imageUrl: 'https://via.placeholder.com/300',
-    stars: 4,
-    price: 100,
-    city: 'City A',
-    rating: 4.5,
-    availability: true
-  },
-  {
-    id: 2,
-    name: 'Hotel B',
-    location: 'Location B',
-    imageUrl: 'https://via.placeholder.com/300',
-    stars: 3,
-    price: 80,
-    city: 'City B',
-    rating: 4.0,
-    availability: false
-  },
-  {
-    id: 3,
-    name: 'Hotel C',
-    location: 'Location C',
-    imageUrl: 'https://via.placeholder.com/300',
-    stars: 5,
-    price: 120,
-    city: 'City C',
-    rating: 3.5,
-    availability: true
-  },
-  {
-    id: 4,
-    name: 'Hotel D',
-    location: 'Location D',
-    imageUrl: 'https://via.placeholder.com/300',
-    stars: 4,
-    price: 90,
-    city: 'City D',
-    rating: 4.0,
-    availability: true
+const hotelsData = ref<Hotel[]>([])
+const isLoading = ref(false)
+const hasError = ref(false)
+
+const fetchHotels = async () => {
+  isLoading.value = true
+  hasError.value = false
+  try {
+    const response = await fetch('/api/hotels.json')
+    if (!response.ok) {
+      throw new Error('Failed to fetch hotels')
+    }
+    const data: Hotel[] = await response.json()
+    hotelsData.value = data
+  } catch (error) {
+    console.error('Error fetching hotels:', error)
+    hasError.value = true
+  } finally {
+    isLoading.value = false
   }
-])
+}
+
+onMounted(() => {
+  fetchHotels()
+})
 </script>
 
 <template>
@@ -68,7 +47,15 @@ const hotelsData = ref<Hotel[]>([
             <HotelSearch />
             <HotelListFilters />
           </div>
-          <HotelListResult :hotels="hotelsData" />
+          <div v-if="isLoading" class="text-center">
+            <p>Loading hotels...</p>
+          </div>
+          <div v-else-if="hasError" class="text-center text-red-500">
+            <p>Error loading hotels. Please try again later.</p>
+          </div>
+          <div v-else>
+            <HotelListResult :hotels="hotelsData" />
+          </div>
         </div>
       </div>
     </div>
