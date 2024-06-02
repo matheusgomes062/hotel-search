@@ -39,6 +39,17 @@ const hotelsData = ref<Hotel[]>([
     city: 'City C',
     rating: 3.5,
     availability: true
+  },
+  {
+    id: 4,
+    name: 'Hotel D',
+    location: 'Location D',
+    imageUrl: 'https://via.placeholder.com/300',
+    stars: 4,
+    price: 90,
+    city: 'City D',
+    rating: 4.0,
+    availability: true
   }
 ])
 </script>
