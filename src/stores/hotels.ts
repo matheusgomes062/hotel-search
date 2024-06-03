@@ -15,7 +15,7 @@ export const useHotelsStore = defineStore({
       this.isLoading = true
       this.hasError = false
       try {
-        const { roomCount, guestCount, ...restParams } = params || {}
+        const { roomCount, guestCount, checkIn, checkOut, ...restParams } = params || {}
 
         const queryParams = new URLSearchParams(
           restParams as unknown as Record<string, string>
@@ -28,13 +28,25 @@ export const useHotelsStore = defineStore({
         }
         let data: Hotel[] = await response.json()
 
-        // Filter hotels based on minimum rooms and guest count
         if (roomCount) {
           data = data.filter((hotel) => hotel.roomCount >= roomCount)
         }
         if (guestCount) {
           data = data.filter((hotel) => hotel.guestCount >= guestCount)
         }
+        if (checkIn) {
+          const checkInDate = new Date(checkIn)
+          console.log('CheckIn date:', checkInDate)
+          data = data.filter((hotel) => new Date(hotel.availableFrom) <= checkInDate)
+          console.log('Hotels after filtering by checkIn:', data)
+        }
+        if (checkOut) {
+          const checkOutDate = new Date(checkOut)
+          console.log('CheckOut date:', checkOutDate)
+          data = data.filter((hotel) => new Date(hotel.availableTo) >= checkOutDate)
+          console.log('Hotels after filtering by checkOut:', data)
+        }
+
         this.hotels = data
       } catch (error) {
         console.error('Error fetching hotels:', error)

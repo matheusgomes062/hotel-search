@@ -22,8 +22,8 @@ export interface Hotel {
   imageUrl: string
   location: string
   stars: number
-  checkIn: string
-  checkOut: string
+  availableFrom: string
+  availableTo: string
   roomCount: number
   guestCount: number
 }

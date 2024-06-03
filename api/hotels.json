@@ -9,8 +9,8 @@
             "price": 100,
             "city": "City A",
             "rating": 4.5,
-            "checkIn": "2021-01-01",
-            "checkOut": "2021-12-31",
+            "availableFrom": "2024-01-01",
+            "availableTo": "2024-12-31",
             "roomCount": 1,
             "guestCount": 2
         },
@@ -23,8 +23,8 @@
             "price": 80,
             "city": "City B",
             "rating": 4.0,
-            "checkIn": "2021-01-02",
-            "checkOut": "2021-02-31",
+            "availableFrom": "2024-01-02",
+            "availableTo": "2024-02-31",
             "roomCount": 2,
             "guestCount": 2
         },
@@ -37,8 +37,8 @@
             "price": 120,
             "city": "City C",
             "rating": 3.5,
-            "checkIn": "2021-04-01",
-            "checkOut": "2021-12-31",
+            "availableFrom": "2024-04-01",
+            "availableTo": "2024-12-31",
             "roomCount": 3,
             "guestCount": 2
         },
@@ -51,8 +51,8 @@
             "price": 90,
             "city": "City D",
             "rating": 4.0,
-            "checkIn": "2021-06-01",
-            "checkOut": "2021-12-31",
+            "availableFrom": "2024-01-01",
+            "availableTo": "2024-12-31",
             "roomCount": 4,
             "guestCount": 1
         }
