@@ -41,7 +41,7 @@ const removeHotelFromComparison = (hotel: Hotel) => {
         :key="hotel.id"
         class="mb-4 border rounded-md p-4 w-full"
       >
-        <div class="flex flex-col justify-between items-start">
+        <div class="flex flex-col justify-between items-start w-52">
           <h3 class="text-lg font-medium">{{ hotel.name }}</h3>
           <button
             @click="() => removeHotelFromComparison(hotel)"

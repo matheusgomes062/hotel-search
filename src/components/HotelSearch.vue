@@ -1,12 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, watch } from 'vue'
 
+// References for form fields
 const destination = ref<string>('')
 const checkInDate = ref<string>('')
 const checkOutDate = ref<string>('')
 const roomCount = ref<number>(1)
 const guestCount = ref<number>(1)
 
+const today = new Date().toISOString().split('T')[0]
+
+const minCheckInDate = computed(() => today)
+
+const minCheckOutDate = computed(() => {
+  return checkInDate.value
+    ? new Date(new Date(checkInDate.value).getTime() + 86400000).toISOString().split('T')[0]
+    : today
+})
+
+watch(checkInDate, (newCheckInDate) => {
+  if (checkOutDate.value && new Date(checkOutDate.value) <= new Date(newCheckInDate)) {
+    checkOutDate.value = new Date(new Date(newCheckInDate).getTime() + 86400000)
+      .toISOString()
+      .split('T')[0]
+  }
+})
+
+// Handle form submission
 const handleSubmit = () => {
   const searchParams = {
     destination: destination.value,
@@ -45,6 +65,7 @@ const handleSubmit = () => {
           type="date"
           id="checkIn"
           v-model="checkInDate"
+          :min="minCheckInDate"
           required
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
@@ -58,6 +79,7 @@ const handleSubmit = () => {
           type="date"
           id="checkOut"
           v-model="checkOutDate"
+          :min="minCheckOutDate"
           required
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
