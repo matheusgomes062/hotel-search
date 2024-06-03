@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { defineProps, defineEmits, ref } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
