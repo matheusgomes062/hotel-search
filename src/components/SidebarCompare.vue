@@ -25,7 +25,7 @@ const removeHotelFromComparison = (hotel: Hotel) => {
 
 <template>
   <aside
-    class="fixed inset-y-0 right-0 z-10 flex-col p-4 border-l bg-background transition-all duration-300 sm:flex"
+    class="inset-y-0 right-0 h-auto flex-col p-4 bg-background transition-all duration-300 shadow-md rounded-md sm:flex"
   >
     <button
       @click="toggleSidebar"
@@ -34,7 +34,7 @@ const removeHotelFromComparison = (hotel: Hotel) => {
       <ChevronRight class="w-6 h-6 text-white" v-if="showSidebar" />
       <ChevronLeft class="w-6 h-6 text-white" v-else />
     </button>
-    <nav class="flex flex-col items-start gap-4 px-4 py-5" v-if="showSidebar">
+    <div class="flex flex-col items-start gap-4 px-4 py-5" v-if="showSidebar">
       <h2 class="text-xl font-bold mb-4">Compare Hotels</h2>
       <div
         v-for="hotel in props.comparedHotels"
@@ -57,7 +57,7 @@ const removeHotelFromComparison = (hotel: Hotel) => {
       <div class="text-center" v-if="props.comparedHotels.length === 0">
         No hotels selected for comparison.
       </div>
-    </nav>
+    </div>
   </aside>
 </template>
 
