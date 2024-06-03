@@ -1,46 +1,60 @@
-[
-    {
-        "id": 1,
-        "name": "Hotel A",
-        "location": "Location A",
-        "imageUrl": "https://via.placeholder.com/300",
-        "stars": 4,
-        "price": 100,
-        "city": "City A",
-        "rating": 4.5,
-        "availability": true
-    },
-    {
-        "id": 2,
-        "name": "Hotel B",
-        "location": "Location B",
-        "imageUrl": "https://via.placeholder.com/300",
-        "stars": 3,
-        "price": 80,
-        "city": "City B",
-        "rating": 4.0,
-        "availability": false
-    },
-    {
-        "id": 3,
-        "name": "Hotel C",
-        "location": "Location C",
-        "imageUrl": "https://via.placeholder.com/300",
-        "stars": 5,
-        "price": 120,
-        "city": "City C",
-        "rating": 3.5,
-        "availability": true
-    },
-    {
-        "id": 4,
-        "name": "Hotel D",
-        "location": "Location D",
-        "imageUrl": "https://via.placeholder.com/300",
-        "stars": 4,
-        "price": 90,
-        "city": "City D",
-        "rating": 4.0,
-        "availability": true
-    }
-]
+{
+    "hotels": [
+        {
+            "id": 1,
+            "name": "Hotel A",
+            "location": "Location A",
+            "imageUrl": "https://via.placeholder.com/300",
+            "stars": 4,
+            "price": 100,
+            "city": "City A",
+            "rating": 4.5,
+            "checkIn": "2021-01-01",
+            "checkOut": "2021-12-31",
+            "roomCount": 1,
+            "guestCount": 2
+        },
+        {
+            "id": 2,
+            "name": "Hotel B",
+            "location": "Location B",
+            "imageUrl": "https://via.placeholder.com/300",
+            "stars": 3,
+            "price": 80,
+            "city": "City B",
+            "rating": 4.0,
+            "checkIn": "2021-01-02",
+            "checkOut": "2021-02-31",
+            "roomCount": 2,
+            "guestCount": 2
+        },
+        {
+            "id": 3,
+            "name": "Hotel C",
+            "location": "Location C",
+            "imageUrl": "https://via.placeholder.com/300",
+            "stars": 5,
+            "price": 120,
+            "city": "City C",
+            "rating": 3.5,
+            "checkIn": "2021-04-01",
+            "checkOut": "2021-12-31",
+            "roomCount": 3,
+            "guestCount": 2
+        },
+        {
+            "id": 4,
+            "name": "Hotel D",
+            "location": "Location D",
+            "imageUrl": "https://via.placeholder.com/300",
+            "stars": 4,
+            "price": 90,
+            "city": "City D",
+            "rating": 4.0,
+            "checkIn": "2021-06-01",
+            "checkOut": "2021-12-31",
+            "roomCount": 4,
+            "guestCount": 1
+        }
+    ]
+}

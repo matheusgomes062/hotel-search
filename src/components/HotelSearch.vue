@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
+import { useHotelsStore } from '@/stores/hotels'
+import type { HotelSearchParams } from '@/types'
+
+const hotelsStore = useHotelsStore()
 
 // References for form fields
 const destination = ref<string>('')
@@ -26,16 +30,16 @@ watch(checkInDate, (newCheckInDate) => {
   }
 })
 
-// Handle form submission
-const handleSubmit = () => {
-  const searchParams = {
-    destination: destination.value,
-    checkInDate: checkInDate.value,
-    checkOutDate: checkOutDate.value,
+const handleSubmit = async () => {
+  const searchParams: HotelSearchParams = {
+    city: destination.value,
+    checkIn: checkInDate.value,
+    checkOut: checkOutDate.value,
     roomCount: roomCount.value,
     guestCount: guestCount.value
   }
-  console.log('Searching with params:', searchParams)
+
+  await hotelsStore.fetchHotels(searchParams)
 }
 </script>
 
@@ -53,7 +57,6 @@ const handleSubmit = () => {
           type="text"
           id="destination"
           v-model="destination"
-          required
           placeholder="Enter destination"
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
@@ -66,7 +69,6 @@ const handleSubmit = () => {
           id="checkIn"
           v-model="checkInDate"
           :min="minCheckInDate"
-          required
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
       </div>
@@ -80,7 +82,6 @@ const handleSubmit = () => {
           id="checkOut"
           v-model="checkOutDate"
           :min="minCheckOutDate"
-          required
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
         />
       </div>
@@ -93,7 +94,6 @@ const handleSubmit = () => {
             id="roomCount"
             v-model="roomCount"
             min="1"
-            required
             class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
           />
         </div>
@@ -105,7 +105,6 @@ const handleSubmit = () => {
             id="guestCount"
             v-model="guestCount"
             min="1"
-            required
             class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
           />
         </div>
