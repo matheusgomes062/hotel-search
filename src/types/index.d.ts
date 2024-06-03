@@ -22,5 +22,16 @@ export interface Hotel {
   imageUrl: string
   location: string
   stars: number
-  availability: boolean
+  availableFrom: string
+  availableTo: string
+  roomCount: number
+  guestCount: number
+}
+
+export interface HotelSearchParams {
+  city: string | null
+  checkIn: string | null
+  checkOut: string | null
+  roomCount: number
+  guestCount: number
 }

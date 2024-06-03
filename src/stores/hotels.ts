@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { Hotel } from '@/types'
+import type { Hotel, HotelSearchParams } from '@/types'
 
 export const useHotelsStore = defineStore({
   id: 'hotels',
@@ -11,15 +11,42 @@ export const useHotelsStore = defineStore({
     compareList: ref<Hotel[]>([]) // State for hotels to compare
   }),
   actions: {
-    async fetchHotels() {
+    async fetchHotels(params?: HotelSearchParams) {
       this.isLoading = true
       this.hasError = false
       try {
-        const response = await fetch('api/hotels.json')
+        const { roomCount, guestCount, checkIn, checkOut, ...restParams } = params || {}
+
+        const queryParams = new URLSearchParams(
+          restParams as unknown as Record<string, string>
+        ).toString()
+        const url = `http://localhost:3000/hotels?${queryParams}`
+
+        const response = await fetch(url)
         if (!response.ok) {
           throw new Error('Failed to fetch hotels')
         }
-        const data: Hotel[] = await response.json()
+        let data: Hotel[] = await response.json()
+
+        if (roomCount) {
+          data = data.filter((hotel) => hotel.roomCount >= roomCount)
+        }
+        if (guestCount) {
+          data = data.filter((hotel) => hotel.guestCount >= guestCount)
+        }
+        if (checkIn) {
+          const checkInDate = new Date(checkIn)
+          console.log('CheckIn date:', checkInDate)
+          data = data.filter((hotel) => new Date(hotel.availableFrom) <= checkInDate)
+          console.log('Hotels after filtering by checkIn:', data)
+        }
+        if (checkOut) {
+          const checkOutDate = new Date(checkOut)
+          console.log('CheckOut date:', checkOutDate)
+          data = data.filter((hotel) => new Date(hotel.availableTo) >= checkOutDate)
+          console.log('Hotels after filtering by checkOut:', data)
+        }
+
         this.hotels = data
       } catch (error) {
         console.error('Error fetching hotels:', error)
