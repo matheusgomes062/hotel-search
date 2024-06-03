@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from 'vue'
+import { defineProps, ref } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import type { Hotel } from '@/types'
 
 const props = defineProps({
   comparedHotels: {
-    type: Array,
+    type: Array as () => Hotel[],
     required: true
   }
 })
@@ -17,8 +18,8 @@ const hotelsStore = useHotelsStore()
 const toggleSidebar = () => {
   showSidebar.value = !showSidebar.value
 }
-const removeHotelFromComparison = (hotelId) => {
-  hotelsStore.removeHotelFromCompare(hotelId)
+const removeHotelFromComparison = (hotel: Hotel) => {
+  hotelsStore.removeHotelFromCompare(hotel)
 }
 </script>
 
@@ -45,9 +46,9 @@ const removeHotelFromComparison = (hotelId) => {
             Remove
           </button>
         </div>
-        <ul class="list-disc pl-4">
+        <!-- <ul class="list-disc pl-4">
           <li v-for="feature in hotel.features" :key="feature">{{ feature }}</li>
-        </ul>
+        </ul> -->
       </div>
       <div class="text-center" v-if="props.comparedHotels.length === 0">
         No hotels selected for comparison.
