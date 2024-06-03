@@ -11,7 +11,7 @@ export const useHotelsStore = defineStore({
     compareList: ref<Hotel[]>([]) // State for hotels to compare
   }),
   actions: {
-    async fetchHotels(params: HotelSearchParams) {
+    async fetchHotels(params?: HotelSearchParams) {
       this.isLoading = true
       this.hasError = false
       try {
