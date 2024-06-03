@@ -2,6 +2,7 @@
 import HotelSearch from '@/components/HotelSearch.vue'
 import HotelListFilters from '@/components/HotelListFilters.vue'
 import HotelListResult from '@/components/HotelListResult.vue'
+import SidebarCompare from '@/components/SidebarCompare.vue'
 
 import { onMounted } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
@@ -23,13 +24,12 @@ const removeFromCompare = (hotel: Hotel) => {
 </script>
 
 <template>
-  <div>
-    <div class="banner bg-indigo-300 rounded-lg py-16 flex flex-col items-center text-center">
-      <h1 class="logo-font text-2xl font-bold text-gray-800">Hotel Search Challenge</h1>
-      <p class="text-gray-600 mb-4">Search the best hotel for your trip!</p>
-    </div>
-
-    <div class="container page">
+  <div class="flex flex-row">
+    <div class="container page py-4">
+      <div class="bg-indigo-300 rounded-lg py-16 flex flex-col items-center text-center">
+        <h1 class="logo-font text-2xl font-bold text-gray-800">Hotel Search Challenge</h1>
+        <p class="text-gray-600 mb-4">Search the best hotel for your trip!</p>
+      </div>
       <div class="row">
         <div class="gap-2 flex flex-col">
           <div>
@@ -52,5 +52,7 @@ const removeFromCompare = (hotel: Hotel) => {
         </div>
       </div>
     </div>
+
+    <SidebarCompare :comparedHotels="hotelsStore.compareList" />
   </div>
 </template>
