@@ -47,6 +47,7 @@ const clearAll = () => {
       </div>
       <button
         @click="clearAll"
+        v-if="props.comparedHotels.length > 0"
         class="text-white font-bold hover:underline ml-2 bg-red-500 px-4 rounded-lg shadow-md hover:bg-red-600"
       >
         Clear All

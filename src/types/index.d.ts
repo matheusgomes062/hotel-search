@@ -36,3 +36,13 @@ export interface HotelSearchParams {
   roomCount: number
   guestCount: number
 }
+
+export interface HotelBookingParams {
+  name: string
+  email: string
+  checkInDate: string
+  checkOutDate: string
+  hotel: Hotel
+  roomCount: number
+  guestCount: number
+}
