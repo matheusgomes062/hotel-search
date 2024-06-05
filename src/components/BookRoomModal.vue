@@ -2,6 +2,9 @@
 import { defineProps, defineEmits, ref, watch, computed } from 'vue'
 import type { Hotel, HotelBookingParams } from '@/types'
 import { XIcon } from 'lucide-vue-next'
+import { useHotelsStore } from '@/stores/hotels'
+
+const hotelsStore = useHotelsStore()
 
 const props = defineProps<{
   hotel: Hotel
@@ -20,18 +23,18 @@ const closeModal = () => {
   emits('close')
 }
 
-const submitBooking = async () => {
+const submitBooking = () => {
   const bookingParams: HotelBookingParams = {
     name: name.value,
     email: email.value,
     checkInDate: checkInDate.value,
     checkOutDate: checkOutDate.value,
     hotel: props.hotel,
-    roomCount: 0,
-    guestCount: 0
+    roomCount: roomCount.value,
+    guestCount: guestCount.value
   }
 
-  await hotelsStore.bookHotel(bookingParams)
+  hotelsStore.bookHotel(bookingParams)
   closeModal()
 }
 

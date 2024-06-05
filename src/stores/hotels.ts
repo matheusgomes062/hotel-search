@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { Hotel, HotelSearchParams } from '@/types'
+import type { Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
 
 export const useHotelsStore = defineStore({
   id: 'hotels',
@@ -8,7 +8,8 @@ export const useHotelsStore = defineStore({
     originalHotels: [] as Hotel[],
     isLoading: false,
     hasError: false,
-    compareList: [] as Hotel[]
+    compareList: [] as Hotel[],
+    bookedHotels: [] as HotelBookingParams[]
   }),
   actions: {
     async fetchHotels(params?: HotelSearchParams) {
@@ -75,6 +76,9 @@ export const useHotelsStore = defineStore({
       })
 
       this.hotels = hotels
+    },
+    bookHotel(bookingParams: HotelBookingParams) {
+      this.bookedHotels.push(bookingParams)
     }
   },
   getters: {
