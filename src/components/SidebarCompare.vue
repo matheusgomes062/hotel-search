@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { ChevronUp, ChevronDown, XCircle } from 'lucide-vue-next'
 import type { Hotel } from '@/types'
 
 const props = defineProps({
@@ -25,37 +25,68 @@ const removeHotelFromComparison = (hotel: Hotel) => {
 
 <template>
   <aside
-    class="inset-y-0 right-0 h-auto flex-col p-4 bg-background transition-all duration-300 shadow-md rounded-md sm:flex"
+    :class="[
+      'inset-y-0 left-0 h-fit flex-col p-4 bg-background transition-all duration-300 shadow-md rounded-md sm:flex',
+      { 'h-full': showSidebar }
+    ]"
   >
-    <button
-      @click="toggleSidebar"
-      class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
-    >
-      <ChevronRight class="w-6 h-6 text-white" v-if="showSidebar" />
-      <ChevronLeft class="w-6 h-6 text-white" v-else />
-    </button>
-    <div class="flex flex-col items-start gap-4 px-4 py-5" v-if="showSidebar">
-      <h2 class="text-xl font-bold mb-4">Compare Hotels</h2>
-      <div
-        v-for="hotel in props.comparedHotels"
-        :key="hotel.id"
-        class="mb-4 border rounded-md p-4 w-full"
+    <div class="flex flex-row gap-4">
+      <button
+        @click="toggleSidebar"
+        class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
       >
-        <div class="flex flex-col justify-between items-start w-52">
-          <h3 class="text-lg font-medium">{{ hotel.name }}</h3>
-          <button
-            @click="() => removeHotelFromComparison(hotel)"
-            class="text-red-500 hover:underline"
-          >
-            Remove
-          </button>
-        </div>
-        <!-- <ul class="list-disc pl-4">
-          <li v-for="feature in hotel.features" :key="feature">{{ feature }}</li>
-        </ul> -->
-      </div>
+        <ChevronUp class="w-6 h-6 text-white" v-if="showSidebar" />
+        <ChevronDown class="w-6 h-6 text-white" v-else />
+      </button>
+      <span class="whitespace-nowrap self-center font-bold">Compare Hotels</span>
+    </div>
+    <div class="flex flex-col items-start gap-4 py-5" v-if="showSidebar">
       <div class="text-center" v-if="props.comparedHotels.length === 0">
         No hotels selected for comparison.
+      </div>
+      <div class="overflow-auto w-full" v-else>
+        <table class="w-full border-collapse">
+          <thead>
+            <tr>
+              <th class="border p-2 bg-blue-100">Property</th>
+              <th
+                v-for="hotel in props.comparedHotels"
+                :key="hotel.id"
+                class="border p-2 bg-blue-100"
+              >
+                <div class="flex justify-between items-center">
+                  {{ hotel.name }}
+                  <button
+                    @click="() => removeHotelFromComparison(hotel)"
+                    class="text-red-500 hover:underline ml-2"
+                  >
+                    <XCircle class="w-4 h-4" />
+                  </button>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-2 bg-gray-100">Stars</td>
+              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+                {{ hotel.stars }}
+              </td>
+            </tr>
+            <tr>
+              <td class="border p-2 bg-gray-100">Price</td>
+              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+                {{ hotel.price }}
+              </td>
+            </tr>
+            <tr>
+              <td class="border p-2 bg-gray-100">Rooms</td>
+              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+                {{ hotel.roomCount }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </aside>
