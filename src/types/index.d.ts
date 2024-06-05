@@ -26,6 +26,7 @@ export interface Hotel {
   availableTo: string
   roomCount: number
   guestCount: number
+  description: string
 }
 
 export interface HotelSearchParams {

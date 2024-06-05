@@ -54,6 +54,9 @@ export const useHotelsStore = defineStore({
     removeHotelFromCompare(hotel: Hotel) {
       this.compareList = this.compareList.filter((h) => h !== hotel)
     },
+    clearComparedHotels() {
+      this.compareList = []
+    },
     filterHotels(orderValue: string, filters: Record<string, number>) {
       const validOrderValues = ['price', 'stars', 'name']
       let hotels = [...this.originalHotels]

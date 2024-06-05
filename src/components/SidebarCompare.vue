@@ -21,6 +21,10 @@ const toggleSidebar = () => {
 const removeHotelFromComparison = (hotel: Hotel) => {
   hotelsStore.removeHotelFromCompare(hotel)
 }
+
+const clearAll = () => {
+  hotelsStore.clearComparedHotels()
+}
 </script>
 
 <template>
@@ -30,15 +34,23 @@ const removeHotelFromComparison = (hotel: Hotel) => {
       { 'h-full': showSidebar }
     ]"
   >
-    <div class="flex flex-row gap-4">
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-row gap-4">
+        <button
+          @click="toggleSidebar"
+          class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
+        >
+          <ChevronUp class="w-6 h-6 text-white" v-if="showSidebar" />
+          <ChevronDown class="w-6 h-6 text-white" v-else />
+        </button>
+        <span class="whitespace-nowrap self-center font-bold">Compare Hotels</span>
+      </div>
       <button
-        @click="toggleSidebar"
-        class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
+        @click="clearAll"
+        class="text-white font-bold hover:underline ml-2 bg-red-500 px-4 rounded-lg shadow-md hover:bg-red-600"
       >
-        <ChevronUp class="w-6 h-6 text-white" v-if="showSidebar" />
-        <ChevronDown class="w-6 h-6 text-white" v-else />
+        Clear All
       </button>
-      <span class="whitespace-nowrap self-center font-bold">Compare Hotels</span>
     </div>
     <div class="flex flex-col items-start gap-4 py-5" v-if="showSidebar">
       <div class="text-center" v-if="props.comparedHotels.length === 0">
@@ -56,10 +68,7 @@ const removeHotelFromComparison = (hotel: Hotel) => {
               >
                 <div class="flex justify-between items-center">
                   {{ hotel.name }}
-                  <button
-                    @click="() => removeHotelFromComparison(hotel)"
-                    class="text-red-500 hover:underline ml-2"
-                  >
+                  <button @click="() => removeHotelFromComparison(hotel)" class="text-red-500 ml-2">
                     <XCircle class="w-4 h-4" />
                   </button>
                 </div>
