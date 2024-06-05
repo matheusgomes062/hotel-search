@@ -5,7 +5,7 @@ export interface OrderOption {
   text: string
 }
 
-export interface FilterField {
+export interface FilterFields {
   name: string
   label: string
   type: 'number'

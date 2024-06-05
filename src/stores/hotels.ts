@@ -1,11 +1,12 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { Hotel, HotelSearchParams } from '@/types'
+import type { FilterFields, Hotel, HotelSearchParams } from '@/types'
 
 export const useHotelsStore = defineStore({
   id: 'hotels',
   state: () => ({
     hotels: ref<Hotel[]>([]),
+    originalHotels: ref<Hotel[]>([]), // Keep a copy of the original list of hotels
     isLoading: ref(false),
     hasError: ref(false),
     compareList: ref<Hotel[]>([]) // State for hotels to compare
@@ -48,6 +49,7 @@ export const useHotelsStore = defineStore({
         }
 
         this.hotels = data
+        this.originalHotels = data // Save a copy of the original data
       } catch (error) {
         console.error('Error fetching hotels:', error)
         this.hasError = true
@@ -62,6 +64,37 @@ export const useHotelsStore = defineStore({
     },
     removeHotelFromCompare(hotel: Hotel) {
       this.compareList = this.compareList.filter((h) => h !== hotel)
+    },
+    filterHotels(orderValue: string, filters: Record<string, number>) {
+      let hotels = this.originalHotels.slice() // Use the originalHotels for filtering
+
+      switch (orderValue) {
+        case 'price':
+          hotels.sort((a, b) => a.price - b.price)
+          break
+        case 'stars':
+          hotels.sort((a, b) => b.stars - a.stars)
+          break
+        case 'name':
+          hotels.sort((a, b) => a.name.localeCompare(b.name))
+          break
+        default:
+          break
+      }
+
+      for (const [field, value] of Object.entries(filters)) {
+        if (field === 'minStars') {
+          hotels = hotels.filter((hotel) => hotel.stars >= value)
+        }
+        if (field === 'maxPrice') {
+          hotels = hotels.filter((hotel) => hotel.price <= value)
+        }
+        if (field === 'minPrice') {
+          hotels = hotels.filter((hotel) => hotel.price >= value)
+        }
+      }
+
+      this.hotels = hotels
     }
   },
   getters: {

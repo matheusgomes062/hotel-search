@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue'
-import type { OrderOption, FilterField } from '@/types'
+import { ref } from 'vue'
+import type { OrderOption, FilterFields } from '@/types'
 import { useHotelsStore } from '@/stores/hotels'
 
 const hotelsStore = useHotelsStore()
-
-const emit = defineEmits(['filterChange'])
 
 const selectedOrder = ref<string>('price')
 const filters = ref<Record<string, number>>({
@@ -20,23 +18,20 @@ const orderOptions: OrderOption[] = [
   { value: 'name', text: 'Name' }
 ]
 
-const filterFields: FilterField[] = [
+const filterFields: FilterFields[] = [
   { name: 'minPrice', label: 'Min Price', type: 'number', min: 0 },
   { name: 'maxPrice', label: 'Max Price', type: 'number', max: 1000 },
   { name: 'minStars', label: 'Min Stars', type: 'number', min: 1 }
 ]
 
-const emitFilterChange = () => {
-  emit('filterChange', {
-    order: selectedOrder.value,
-    ...filters.value
-  })
+const handleFilter = async () => {
+  await hotelsStore.filterHotels(selectedOrder.value, filters.value)
 }
 </script>
 
 <template>
   <div class="p-4 bg-gray-100 rounded-b-lg">
-    <form @submit.prevent="emitFilterChange">
+    <form @submit.prevent="handleFilter">
       <div class="flex flex-wrap flex-row items-end gap-4 justify-start">
         <div class="w-full md:w-auto">
           <label for="order" class="block mb-2 font-medium">Order By:</label>
