@@ -36,6 +36,7 @@ const removeFromCompare = (hotel: Hotel) => {
             <HotelSearch />
             <HotelListFilters />
           </div>
+          <SidebarCompare :comparedHotels="hotelsStore.compareList" />
           <div v-if="hotelsStore.isLoading" class="text-center">
             <p>Loading hotels...</p>
           </div>
@@ -49,7 +50,6 @@ const removeFromCompare = (hotel: Hotel) => {
               @add-to-compare="addToCompare"
               @remove-from-compare="removeFromCompare"
             />
-            <SidebarCompare :comparedHotels="hotelsStore.compareList" />
           </div>
         </div>
       </div>
