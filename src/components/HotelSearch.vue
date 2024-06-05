@@ -5,7 +5,6 @@ import type { HotelSearchParams } from '@/types'
 
 const hotelsStore = useHotelsStore()
 
-// References for form fields
 const destination = ref<string>('')
 const checkInDate = ref<string>('')
 const checkOutDate = ref<string>('')
