@@ -25,7 +25,17 @@ const filterFields: FilterFields[] = [
 ]
 
 const handleFilter = async () => {
-  await hotelsStore.filterHotels(selectedOrder.value, filters.value)
+  hotelsStore.filterHotels(selectedOrder.value, filters.value)
+}
+
+const handleClearFilter = async () => {
+  filters.value = {
+    minPrice: 0,
+    maxPrice: 1000,
+    minStars: 1
+  }
+  selectedOrder.value = 'price'
+  await hotelsStore.fetchHotels()
 }
 </script>
 
@@ -46,9 +56,9 @@ const handleFilter = async () => {
           </select>
         </div>
         <div class="w-full md:w-auto" v-for="field in filterFields" :key="field.name">
-          <label for="{{ field.name }}" class="block mb-2 font-medium">{{ field.label }}:</label>
+          <label :for="field.name" class="block mb-2 font-medium">{{ field.label }}:</label>
           <input
-            v-model="filters[field.name]"
+            v-model.number="filters[field.name]"
             :type="field.type"
             :id="field.name"
             class="w-full p-2 border rounded-md outline-none border-none"
@@ -56,6 +66,12 @@ const handleFilter = async () => {
             :max="field.max"
           />
         </div>
+        <button
+          @click="handleClearFilter"
+          class="px-4 h-10 text-white bg-gray-600 font-semibold rounded-md shadow hover:bg-gray-700"
+        >
+          Clear Filters
+        </button>
         <button
           type="submit"
           class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
