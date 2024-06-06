@@ -53,7 +53,7 @@ export const useHotelsStore = defineStore({
       }
     },
     removeHotelFromCompare(hotel: Hotel) {
-      this.compareList = this.compareList.filter((h) => h !== hotel)
+      this.compareList = this.compareList.filter((h) => h.id !== hotel.id)
     },
     clearComparedHotels() {
       this.compareList = []
