@@ -37,6 +37,7 @@ const clearAll = () => {
     <div class="flex flex-row justify-between">
       <div class="flex flex-row gap-4">
         <button
+          data-test="toggle-sidebar"
           @click="toggleSidebar"
           class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
         >
@@ -46,6 +47,7 @@ const clearAll = () => {
         <span class="whitespace-nowrap self-center font-bold">Compare Hotels</span>
       </div>
       <button
+        data-test="clear-all"
         @click="clearAll"
         v-if="props.comparedHotels.length > 0"
         class="text-white font-bold hover:underline ml-2 bg-red-500 px-4 rounded-lg shadow-md hover:bg-red-600"
@@ -69,7 +71,11 @@ const clearAll = () => {
               >
                 <div class="flex justify-between items-center">
                   {{ hotel.name }}
-                  <button @click="() => removeHotelFromComparison(hotel)" class="text-red-500 ml-2">
+                  <button
+                    data-test="remove-hotel"
+                    @click="() => removeHotelFromComparison(hotel)"
+                    class="text-red-500 ml-2"
+                  >
                     <XCircle class="w-4 h-4" />
                   </button>
                 </div>
