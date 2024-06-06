@@ -5,6 +5,12 @@
       :key="hotel.id"
       :hotel="hotel"
       @addToCompare="addToCompare"
+      @bookRoom="bookRoom"
+    />
+    <BookRoomModal
+      v-if="userWantsToBookARoom"
+      :hotel="userWantsToBookARoom"
+      @close="userWantsToBookARoom = null"
     />
   </div>
 </template>
@@ -12,17 +18,25 @@
 <script setup lang="ts">
 import type { Hotel } from '@/types'
 import HotelCard from '@/components/HotelCard.vue'
+import BookRoomModal from '@/components/BookRoomModal.vue'
 import { useHotelsStore } from '@/stores/hotels'
+import { ref } from 'vue'
 
 const hotelsStore = useHotelsStore()
+
+const props = defineProps<{
+  hotels: Hotel[]
+}>()
+
+const userWantsToBookARoom = ref<Hotel | null>(null)
 
 const addToCompare = (hotel: Hotel) => {
   hotelsStore.addHotelToCompare(hotel)
 }
 
-const props = defineProps<{
-  hotels: Hotel[]
-}>()
+const bookRoom = (hotel: Hotel) => {
+  userWantsToBookARoom.value = hotel
+}
 </script>
 
 <style scoped></style>

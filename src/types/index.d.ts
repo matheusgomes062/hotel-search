@@ -26,12 +26,23 @@ export interface Hotel {
   availableTo: string
   roomCount: number
   guestCount: number
+  description: string
 }
 
 export interface HotelSearchParams {
   city: string | null
   checkIn: string | null
   checkOut: string | null
+  roomCount: number
+  guestCount: number
+}
+
+export interface HotelBookingParams {
+  name: string
+  email: string
+  checkInDate: string
+  checkOutDate: string
+  hotel: Hotel
   roomCount: number
   guestCount: number
 }
