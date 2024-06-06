@@ -18,7 +18,6 @@ export interface Hotel {
   name: string
   price: number
   city: string
-  rating: number
   imageUrl: string
   location: string
   stars: number
