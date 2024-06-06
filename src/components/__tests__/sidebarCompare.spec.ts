@@ -2,10 +2,8 @@ import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { useHotelsStore } from '@/stores/hotels'
-import type { Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
-import { ref } from 'vue'
+import type { Hotel } from '@/types'
 import SidebarCompare from '@/components/SidebarCompare.vue'
-import exp from 'constants'
 
 const getHotels = (): Hotel[] => [
   {
