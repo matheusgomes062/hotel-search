@@ -1,20 +1,3 @@
-<template>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <HotelCard
-      v-for="hotel in props.hotels"
-      :key="hotel.id"
-      :hotel="hotel"
-      @addToCompare="addToCompare"
-      @bookRoom="bookRoom"
-    />
-    <BookRoomModal
-      v-if="userWantsToBookARoom"
-      :hotel="userWantsToBookARoom"
-      @close="userWantsToBookARoom = null"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 import type { Hotel } from '@/types'
 import HotelCard from '@/components/HotelCard.vue'
@@ -38,5 +21,22 @@ const bookRoom = (hotel: Hotel) => {
   userWantsToBookARoom.value = hotel
 }
 </script>
+
+<template>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <HotelCard
+      v-for="hotel in props.hotels"
+      :key="hotel.id"
+      :hotel="hotel"
+      @addToCompare="addToCompare"
+      @bookRoom="bookRoom"
+    />
+    <BookRoomModal
+      v-if="userWantsToBookARoom"
+      :hotel="userWantsToBookARoom"
+      @close="userWantsToBookARoom = null"
+    />
+  </div>
+</template>
 
 <style scoped></style>
