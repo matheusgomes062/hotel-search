@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, test, vi } from 'vitest'
 import { useHotelsStore } from '@/stores/hotels'
-import type { Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
+import type { Hotel, HotelBookingParams } from '@/types'
 
 const getHotels = (): Hotel[] => [
   {
