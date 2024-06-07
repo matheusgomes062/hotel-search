@@ -61,6 +61,7 @@ const handleClearFilter = async () => {
             v-model.number="filters[field.name]"
             :type="field.type"
             :id="field.name"
+            :data-test="field.name"
             class="w-full p-2 border rounded-md outline-none border-none"
             :min="field.min"
             :max="field.max"
@@ -73,6 +74,7 @@ const handleClearFilter = async () => {
           Clear Filters
         </button>
         <button
+          data-test="apply-filters-button"
           type="submit"
           class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
         >
