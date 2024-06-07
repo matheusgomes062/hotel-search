@@ -55,6 +55,7 @@ const handleSubmit = async () => {
         <input
           type="text"
           id="destination"
+          data-test="destination-input"
           v-model="destination"
           placeholder="Enter destination"
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
@@ -66,6 +67,7 @@ const handleSubmit = async () => {
         <input
           type="date"
           id="checkIn"
+          data-test="checkIn-input"
           v-model="checkInDate"
           :min="minCheckInDate"
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
@@ -79,6 +81,7 @@ const handleSubmit = async () => {
         <input
           type="date"
           id="checkOut"
+          data-test="checkOut-input"
           v-model="checkOutDate"
           :min="minCheckOutDate"
           class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
@@ -91,6 +94,7 @@ const handleSubmit = async () => {
           <input
             type="number"
             id="roomCount"
+            data-test="roomCount-input"
             v-model="roomCount"
             min="1"
             class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
@@ -102,6 +106,7 @@ const handleSubmit = async () => {
           <input
             type="number"
             id="guestCount"
+            data-test="guestCount-input"
             v-model="guestCount"
             min="1"
             class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
@@ -112,6 +117,7 @@ const handleSubmit = async () => {
       <div class="h-12">
         <button
           type="submit"
+          data-test="search-button"
           class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
         >
           Search
