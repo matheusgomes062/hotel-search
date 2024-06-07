@@ -61,12 +61,16 @@ watch(checkInDate, (newCheckInDate) => {
   <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-semibold">{{ hotel.name }}</h2>
-        <button @click="closeModal" class="text-gray-600 hover:text-gray-800">
+        <h2 data-test="hotel-name" class="text-xl font-semibold">{{ hotel.name }}</h2>
+        <button
+          data-test="close-modal-button"
+          @click="closeModal"
+          class="text-gray-600 hover:text-gray-800"
+        >
           <XIcon class="w-6 h-6" />
         </button>
       </div>
-      <p class="mb-4">{{ hotel.description }}</p>
+      <p data-test="hotel-description" class="mb-4">{{ hotel.description }}</p>
       <form @submit.prevent="submitBooking">
         <div class="mb-4">
           <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -74,6 +78,7 @@ watch(checkInDate, (newCheckInDate) => {
             type="text"
             id="name"
             v-model="name"
+            data-test="name-input"
             class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
             required
           />
@@ -84,6 +89,7 @@ watch(checkInDate, (newCheckInDate) => {
             type="email"
             id="email"
             v-model="email"
+            data-test="email-input"
             class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
             required
           />
@@ -98,6 +104,7 @@ watch(checkInDate, (newCheckInDate) => {
               id="checkInDate"
               v-model="checkInDate"
               :min="minCheckInDate"
+              data-test="checkIn-input"
               class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               required
             />
@@ -111,6 +118,7 @@ watch(checkInDate, (newCheckInDate) => {
               id="checkOutDate"
               v-model="checkOutDate"
               :min="minCheckOutDate"
+              data-test="checkOut-input"
               class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               required
             />
@@ -127,6 +135,7 @@ watch(checkInDate, (newCheckInDate) => {
               v-model="roomCount"
               :min="1"
               :max="props.hotel.roomCount"
+              data-test="roomCount-input"
               class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               required
             />
@@ -141,6 +150,7 @@ watch(checkInDate, (newCheckInDate) => {
               v-model="guestCount"
               :min="1"
               :max="props.hotel.guestCount"
+              data-test="guestCount-input"
               class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               required
             />
@@ -148,6 +158,7 @@ watch(checkInDate, (newCheckInDate) => {
         </div>
         <button
           type="submit"
+          data-test="book-room-button"
           class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
         >
           Book Room
