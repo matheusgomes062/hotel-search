@@ -1,7 +1,5 @@
-import { createPinia, setActivePinia } from 'pinia'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { useHotelsStore } from '@/stores/hotels'
 import type { Hotel } from '@/types'
 import HotelCard from '@/components/HotelCard.vue'
 
