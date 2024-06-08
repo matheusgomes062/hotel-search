@@ -1,4 +1,4 @@
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e0fc7425-d808-4aac-a478-8c68a5e01c7f)![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e6d2fd8a-282b-41b9-ba13-98c11c72982b)<p align="center">
+<p align="center">
   <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
 </p>
 <p align="center">
@@ -54,6 +54,8 @@
 ![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/3d3883f8-ad7b-401b-bd18-5a8bb4041684)
 ![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/f54ae490-3335-4fc5-a04b-188e5fa4a787)
 ![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/62e26e0d-0060-49db-a1de-39149a987340)
+![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e0fc7425-d808-4aac-a478-8c68a5e01c7f)
+![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e6d2fd8a-282b-41b9-ba13-98c11c72982b)
 
 
 
