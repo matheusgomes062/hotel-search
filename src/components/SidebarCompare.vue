@@ -39,17 +39,17 @@ const clearAll = () => {
         <button
           data-test="toggle-sidebar"
           @click="toggleSidebar"
-          class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-indigo-600"
+          class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-violet-600"
         >
           <ChevronUp class="w-6 h-6 text-white" v-if="showSidebar" />
           <ChevronDown class="w-6 h-6 text-white" v-else />
         </button>
-        <span class="whitespace-nowrap self-center font-bold">Compare Hotels</span>
+        <span class="whitespace-nowrap self-center">Compare Hotels</span>
       </div>
       <button
         data-test="clear-all"
         @click="clearAll"
-        v-if="props.comparedHotels.length > 0"
+        v-if="props.comparedHotels.length > 0 && showSidebar"
         class="text-white font-bold hover:underline ml-2 bg-red-500 px-4 rounded-lg shadow-md hover:bg-red-600"
       >
         Clear All

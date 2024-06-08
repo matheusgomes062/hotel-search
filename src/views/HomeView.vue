@@ -10,15 +10,10 @@ import type { Hotel } from '@/types'
 
 const hotelsStore = useHotelsStore()
 const bookingStatus = hotelsStore.getBookedHotels
-// const bookingStatus = true
 
 onMounted(() => {
   hotelsStore.fetchHotels()
 })
-
-const addToCompare = (hotel: Hotel) => {
-  hotelsStore.addHotelToCompare(hotel)
-}
 
 const removeFromCompare = (hotel: Hotel) => {
   hotelsStore.removeHotelFromCompare(hotel)
@@ -32,7 +27,7 @@ const removeFromCompare = (hotel: Hotel) => {
         <img src="https://img.logoipsum.com/286.svg" alt="Hotel-Logo" class="w-60" />
       </div>
       <h1 class="text-black self-center justify-center flex mt-12 mb-8 text-4xl font-medium">
-        Find the right hotel for you!
+        Find the right hotel for &nbsp;<i class="text-violet-700">you!</i>
       </h1>
       <div>
         <div class="gap-2 flex flex-col">
@@ -60,7 +55,6 @@ const removeFromCompare = (hotel: Hotel) => {
             <HotelListResult
               class="w-full"
               :hotels="hotelsStore.hotels"
-              @add-to-compare="addToCompare"
               @remove-from-compare="removeFromCompare"
             />
           </div>

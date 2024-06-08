@@ -18,35 +18,41 @@ const bookRoom = (hotel: Hotel) => {
 </script>
 
 <template>
-  <div class="bg-white rounded shadow-md overflow-hidden">
+  <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-[101%]">
     <img :src="props.hotel.imageUrl" alt="" class="w-full h-48 object-cover" />
-    <div class="p-4">
-      <h3 data-test="hotel-name" class="text-lg font-medium mb-2">{{ props.hotel.name }}</h3>
-      <p data-test="hotel-location" class="text-gray-600 mb-2">{{ props.hotel.location }}</p>
-      <div class="flex items-center gap-2">
-        <StarIcon class="w-5 h-5 text-yellow-500" />
-        <span data-test="hotel-stars" class="text-gray-700">{{ props.hotel.stars }}</span>
-      </div>
-      <div class="flex flex-col justify-between gap-2 items-start mt-4">
-        <span data-test="hotel-price-per-night" class="text-gray-700 font-semibold"
-          >{{ props.hotel.price }}$ per night</span
-        >
-        <div class="flex flex-row gap-4 justify-end w-full mt-4">
-          <button
-            data-test="compare-hotel-button"
-            @click="() => addToCompare(hotel)"
-            class="self-end px-4 h-8 bg-purple-600 text-white font-semibold rounded-md shadow hover:bg-purple-700"
-          >
-            Compare
-          </button>
-          <button
-            data-test="book-room-hotel-button"
-            @click="() => bookRoom(hotel)"
-            class="self-end px-4 h-8 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
-          >
-            Book a room
-          </button>
+    <div class="p-4 justify-between gap-4 grid grid-cols-2">
+      <div class="">
+        <h3 data-test="hotel-name" class="text-2xl font-medium">{{ props.hotel.name }}</h3>
+        <p data-test="hotel-location" class="text-gray-600 mb-2 text-sm">
+          {{ props.hotel.location }}
+        </p>
+        <div class="flex items-center gap-2 border-2 border-yellow-500 w-fit rounded-full px-2">
+          <StarIcon class="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+          <span data-test="hotel-stars" class="text-black">{{ props.hotel.stars }}</span>
         </div>
+        <div class="flex flex-col justify-between gap-2 items-start mt-2 md:mt-4">
+          <div class="text-wrapper">
+            <span data-test="hotel-price-per-night" class="text-green-700 text-4xl font-semibold"
+              >{{ props.hotel.price }}$</span
+            ><span class="text-xs">/per night</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2 w-full">
+        <button
+          data-test="compare-hotel-button"
+          @click="() => addToCompare(hotel)"
+          class="w-full px-4 py-1 bg-orange-400 text-white rounded-lg shadow hover:bg-orange-500"
+        >
+          Compare
+        </button>
+        <button
+          data-test="book-room-hotel-button"
+          @click="() => bookRoom(hotel)"
+          class="w-full h-full px-4 bg-violet-600 text-white font-semibold rounded-lg shadow hover:bg-violet-700"
+        >
+          Book a room
+        </button>
       </div>
     </div>
   </div>
