@@ -1,4 +1,4 @@
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e6d2fd8a-282b-41b9-ba13-98c11c72982b)<p align="center">
+![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e0fc7425-d808-4aac-a478-8c68a5e01c7f)![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/e6d2fd8a-282b-41b9-ba13-98c11c72982b)<p align="center">
   <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
 </p>
 <p align="center">
@@ -335,6 +335,8 @@ pnpm run serve
 - [x] `► Logic for filter`
 - [x] `► Logic for compare`
 - [x] `► Logic for booking`
+- [x] `► Notification`
+- [x] `► Booking Status`
 - [x] `► Tests`
 - [x] `► CI/CD`
 - [x] `► Improve styling to be more accessible`
