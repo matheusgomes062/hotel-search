@@ -22,7 +22,7 @@ const bookRoom = (hotel: Hotel) => {
     <img :src="props.hotel.imageUrl" alt="" class="w-full h-48 object-cover" />
     <div class="p-4 justify-between gap-4 grid grid-cols-2">
       <div class="">
-        <h3 data-test="hotel-name" class="text-2xl font-medium">{{ props.hotel.name }}</h3>
+        <h2 data-test="hotel-name" class="text-2xl font-medium">{{ props.hotel.name }}</h2>
         <p data-test="hotel-city" class="text-gray-600 mb-2 text-sm">
           {{ props.hotel.city }}
         </p>
@@ -42,7 +42,7 @@ const bookRoom = (hotel: Hotel) => {
         <button
           data-test="compare-hotel-button"
           @click="() => addToCompare(hotel)"
-          class="w-full px-4 py-1 bg-orange-400 text-white rounded-lg shadow hover:bg-orange-500"
+          class="w-full px-4 py-1 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700"
         >
           Compare
         </button>

@@ -38,6 +38,7 @@ const clearAll = () => {
       <div class="flex flex-row gap-4">
         <button
           data-test="toggle-sidebar"
+          aria-label="Toggle Sidebar"
           @click="toggleSidebar"
           class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-violet-600"
         >
@@ -73,6 +74,7 @@ const clearAll = () => {
                   {{ hotel.name }}
                   <button
                     data-test="remove-hotel"
+                    v-if="props.comparedHotels.length > 1"
                     @click="() => removeHotelFromComparison(hotel)"
                     class="text-red-500 ml-2"
                   >

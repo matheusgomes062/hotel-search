@@ -90,7 +90,7 @@ const hangleToggleFilters = () => {
   </div>
   <button
     @click="hangleToggleFilters"
-    class="w-[92%] py-2 px-4 bg-violet-400 text-white text-sm font-semibold rounded-b-lg shadow hover:bg-violet-500"
+    class="w-[92%] py-2 px-4 bg-violet-600 text-white text-sm font-semibold rounded-b-lg shadow hover:bg-violet-700"
   >
     {{ isFilterOpen ? 'Close Filters' : 'Open Filters' }}
   </button>
