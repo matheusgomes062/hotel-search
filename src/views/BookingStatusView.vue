@@ -59,3 +59,40 @@ const statusSteps = computed(() => {
     </div>
   </div>
 </template>
+
+<style>
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-right: 8px;
+}
+
+.circle.active {
+  background-color: green;
+}
+
+.label {
+  font-size: 14px;
+  color: gray;
+}
+
+.label.active {
+  color: black;
+  font-weight: bold;
+}
+</style>
