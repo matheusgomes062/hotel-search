@@ -41,7 +41,7 @@ describe('HotelCard.vue', () => {
     })
 
     expect(wrapper.find('[data-test="hotel-name"]').text()).toBe(getHotels()[0].name)
-    expect(wrapper.find('[data-test="hotel-location"]').text()).toBe(getHotels()[0].location)
+    expect(wrapper.find('[data-test="hotel-city"]').text()).toBe(getHotels()[0].location)
     expect(wrapper.find('[data-test="hotel-stars"]').text()).toContain(`${getHotels()[0].stars}`)
     expect(wrapper.find('[data-test="hotel-price-per-night"]').text()).toContain(
       `${getHotels()[0].price}$ per night`

@@ -23,8 +23,8 @@ const bookRoom = (hotel: Hotel) => {
     <div class="p-4 justify-between gap-4 grid grid-cols-2">
       <div class="">
         <h3 data-test="hotel-name" class="text-2xl font-medium">{{ props.hotel.name }}</h3>
-        <p data-test="hotel-location" class="text-gray-600 mb-2 text-sm">
-          {{ props.hotel.location }}
+        <p data-test="hotel-city" class="text-gray-600 mb-2 text-sm">
+          {{ props.hotel.city }}
         </p>
         <div class="flex items-center gap-2 border-2 border-yellow-500 w-fit rounded-full px-2">
           <StarIcon class="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />

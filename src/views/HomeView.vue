@@ -33,15 +33,6 @@ const removeFromCompare = (hotel: Hotel) => {
         <div class="gap-2 flex flex-col">
           <div class="flex flex-col items-center justify-center mb-4">
             <HotelSearch />
-            <div
-              class="flex flex-row gap-4 p-4 my-4 bg-background shadow-md rounded-md"
-              v-if="bookingStatus.length > 0"
-            >
-              <p>Check your booking status here!</p>
-              <router-link to="/booking-status" class="text-blue-500 font-bold hover:underline"
-                >Booking Status</router-link
-              >
-            </div>
             <HotelListFilters />
           </div>
           <SidebarCompare :comparedHotels="hotelsStore.compareList" />
@@ -59,6 +50,15 @@ const removeFromCompare = (hotel: Hotel) => {
             />
           </div>
         </div>
+      </div>
+      <div
+        class="fixed bottom-5 right-5 flex flex-row w-fit gap-4 p-4 bg-background outline outline-violet-500 shadow-md rounded-md"
+        v-if="bookingStatus.length > 0"
+      >
+        <p>Check your booking status here!</p>
+        <router-link to="/booking-status" class="text-blue-500 font-bold hover:underline"
+          >Booking Status</router-link
+        >
       </div>
     </div>
   </div>
