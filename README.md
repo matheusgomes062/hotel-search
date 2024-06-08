@@ -319,9 +319,21 @@ pnpm run serve
 
 ## 🛠 Project Roadmap
 
-- [X] `► INSERT-TASK-1`
-- [ ] `► INSERT-TASK-2`
-- [ ] `► ...`
+- [X] `► Design`
+- [x] `► Logic for search`
+- [x] `► Logic for filter`
+- [x] `► Logic for compare`
+- [x] `► Logic for booking`
+- [x] `► Tests`
+- [x] `► CI/CD`
+- [x] `► Improve styling to be more accessible`
+- [x] `► Documentation`
+- [IN PROGRESS] `► Improve Vue 3 usage`
+- [IN PROGRESS] `► Improve Typings`
+- [ ] `► Add a node.js server`
+- [ ] `► Add mongodb`
+- [ ] `► Storybook`
+- [ ] `► Figma`
 
 ---
 
