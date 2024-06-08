@@ -26,7 +26,9 @@ const removeFromCompare = (hotel: Hotel) => {
       <div class="bg-violet-300 rounded-xl py-6 flex flex-col items-center text-center">
         <img src="https://img.logoipsum.com/286.svg" alt="Hotel-Logo" class="w-60" />
       </div>
-      <h1 class="text-black self-center justify-center flex mt-12 mb-8 text-4xl font-medium">
+      <h1
+        class="text-black self-center justify-center flex mt-12 mb-8 text-3xl md:text-6xl font-medium"
+      >
         Find the right hotel for &nbsp;<i class="text-violet-700">you!</i>
       </h1>
       <div>
