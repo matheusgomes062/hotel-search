@@ -43,12 +43,11 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="p-8 bg-white shadow-lg rounded-lg mt-10">
-    <form
-      @submit.prevent="handleSubmit"
-      class="space-y-6 flex flex-row flex-wrap items-end justify-between"
-    >
-      <div class="form-group w-full md:w-auto">
+  <div class="w-full">
+    <form @submit.prevent="handleSubmit" class="flex flex-col flex-wrap gap-4">
+      <div
+        class="form-group w-full rounded-xl md:rounded-full bg-white items-center px-5 md:px-10 py-2 md:py-5 border"
+      >
         <label for="destination" class="block text-sm font-medium text-gray-700"
           >Destination:</label
         >
@@ -58,67 +57,71 @@ const handleSubmit = async () => {
           data-test="destination-input"
           v-model="destination"
           placeholder="Enter destination"
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
+          class="text-sm h-8 w-full border-gray-300 outline-none"
         />
       </div>
 
-      <div class="form-group w-full md:w-auto">
-        <label for="checkIn" class="block text-sm font-medium text-gray-700">Check-In Date:</label>
-        <input
-          type="date"
-          id="checkIn"
-          data-test="checkIn-input"
-          v-model="checkInDate"
-          :min="minCheckInDate"
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
-        />
-      </div>
-
-      <div class="form-group w-full md:w-auto">
-        <label for="checkOut" class="block text-sm font-medium text-gray-700"
-          >Check-Out Date:</label
-        >
-        <input
-          type="date"
-          id="checkOut"
-          data-test="checkOut-input"
-          v-model="checkOutDate"
-          :min="minCheckOutDate"
-          class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
-        />
-      </div>
-
-      <div class="form-group w-full md:w-auto grid grid-cols-2 gap-4">
-        <div>
-          <label for="roomCount" class="block text-sm font-medium text-gray-700">Rooms:</label>
+      <div
+        class="form-group w-full flex flex-col md:flex-row gap-4 md:gap-0 rounded-xl md:rounded-full bg-white items-center px-5 md:px-10 py-2 md:py-5 border justify-between"
+      >
+        <div class="w-full md:w-auto md:border-r md:pr-8 border-gray-300 ml-4">
+          <label for="checkIn" class="block text-sm font-medium text-gray-700"
+            >Check-In Date:</label
+          >
           <input
-            type="number"
-            id="roomCount"
-            data-test="roomCount-input"
-            v-model="roomCount"
-            min="1"
-            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
+            type="date"
+            id="checkIn"
+            data-test="checkIn-input"
+            v-model="checkInDate"
+            :min="minCheckInDate"
+            class="text-sm h-8 w-full border-gray-300 outline-none"
           />
         </div>
 
-        <div>
-          <label for="guestCount" class="block text-sm font-medium text-gray-700">Guests:</label>
+        <div class="w-full md:w-auto md:border-r md:pr-8 border-gray-300 ml-4">
+          <label for="checkOut" class="block text-sm font-medium text-gray-700"
+            >Check-Out Date:</label
+          >
           <input
-            type="number"
-            id="guestCount"
-            data-test="guestCount-input"
-            v-model="guestCount"
-            min="1"
-            class="my-2 px-2 h-10 block w-full border-gray-300 shadow-sm outline-none"
+            type="date"
+            id="checkOut"
+            data-test="checkOut-input"
+            v-model="checkOutDate"
+            :min="minCheckOutDate"
+            class="text-sm h-8 w-full border-gray-300 outline-none"
           />
         </div>
-      </div>
 
-      <div class="h-12">
+        <div class="w-full md:w-auto grid grid-cols-2 gap-4">
+          <div class="border-r md:pr-8 border-gray-300 ml-4">
+            <label for="roomCount" class="block text-sm font-medium text-gray-700">Rooms:</label>
+            <input
+              type="number"
+              id="roomCount"
+              data-test="roomCount-input"
+              v-model="roomCount"
+              min="1"
+              class="text-sm h-8 w-1/2 outline-none"
+            />
+          </div>
+
+          <div class="md:border-r md:pr-8 border-gray-300 ml-4">
+            <label for="guestCount" class="block text-sm font-medium text-gray-700">Guests:</label>
+            <input
+              type="number"
+              id="guestCount"
+              data-test="guestCount-input"
+              v-model="guestCount"
+              min="1"
+              class="text-sm h-8 w-1/2 outline-none"
+            />
+          </div>
+        </div>
+
         <button
           type="submit"
           data-test="search-button"
-          class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
+          class="w-full md:w-auto ml-4 px-4 h-10 text-white font-semibold rounded-full shadow bg-violet-600 hover:bg-violet-700"
         >
           Search
         </button>

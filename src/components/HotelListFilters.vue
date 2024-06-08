@@ -4,6 +4,7 @@ import type { OrderOption, FilterFields } from '@/types'
 import { useHotelsStore } from '@/stores/hotels'
 
 const hotelsStore = useHotelsStore()
+const isFilterOpen = ref<boolean>(false)
 
 const selectedOrder = ref<string>('price')
 const filters = ref<Record<string, number>>({
@@ -37,10 +38,14 @@ const handleClearFilter = async () => {
   selectedOrder.value = 'price'
   await hotelsStore.fetchHotels()
 }
+
+const hangleToggleFilters = () => {
+  isFilterOpen.value = !isFilterOpen.value
+}
 </script>
 
 <template>
-  <div class="p-4 bg-gray-100 rounded-b-lg">
+  <div class="p-4 bg-gray-100 rounded-b-lg w-[92%]" v-if="isFilterOpen">
     <form @submit.prevent="handleFilter">
       <div class="flex flex-wrap flex-row items-end gap-4 justify-start">
         <div class="w-full md:w-auto">
@@ -62,27 +67,34 @@ const handleClearFilter = async () => {
             :type="field.type"
             :id="field.name"
             :data-test="field.name"
-            class="w-full p-2 border rounded-md outline-none border-none"
+            class="w-40 p-2 border rounded-md outline-none border-none"
             :min="field.min"
             :max="field.max"
           />
         </div>
         <button
+          data-test="clear-filters-button"
           @click="handleClearFilter"
-          class="px-4 h-10 text-white bg-gray-600 font-semibold rounded-md shadow hover:bg-gray-700"
+          class="px-4 py-2 text-white bg-orange-500 font-semibold rounded-full shadow hover:bg-orange-600"
         >
           Clear Filters
         </button>
         <button
           data-test="apply-filters-button"
           type="submit"
-          class="px-4 h-10 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700"
+          class="px-4 py-2 bg-violet-600 text-white font-semibold rounded-full shadow hover:bg-violet-700"
         >
           Apply Filters
         </button>
       </div>
     </form>
   </div>
+  <button
+    @click="hangleToggleFilters"
+    class="w-[92%] py-2 px-4 bg-violet-600 text-white text-sm font-semibold rounded-b-lg shadow hover:bg-violet-700"
+  >
+    {{ isFilterOpen ? 'Close Filters' : 'Open Filters' }}
+  </button>
 </template>
 
 <style scoped>

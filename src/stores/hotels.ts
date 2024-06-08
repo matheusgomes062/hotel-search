@@ -79,10 +79,15 @@ export const useHotelsStore = defineStore({
     },
     bookHotel(bookingParams: HotelBookingParams) {
       this.bookedHotels.push(bookingParams)
+    },
+    clearBookedHotels() {
+      this.bookedHotels = []
     }
   },
   getters: {
     hotelsCount: (state) => state.hotels.length,
-    compareCount: (state) => state.compareList.length
+    compareCount: (state) => state.compareList.length,
+    getBookedHotels: (state) => state.bookedHotels,
+    getHasBookingStatus: (state) => state.bookedHotels.length > 0
   }
 })
