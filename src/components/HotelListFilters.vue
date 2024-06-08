@@ -73,6 +73,7 @@ const hangleToggleFilters = () => {
           />
         </div>
         <button
+          data-test="clear-filters-button"
           @click="handleClearFilter"
           class="px-4 py-2 text-white bg-orange-500 font-semibold rounded-full shadow hover:bg-orange-600"
         >

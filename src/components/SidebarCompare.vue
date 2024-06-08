@@ -28,7 +28,7 @@ const clearAll = () => {
 </script>
 
 <template>
-  <aside
+  <div
     :class="[
       'inset-y-0 left-0 h-fit flex-col p-4 bg-background transition-all duration-300 shadow-md rounded-md sm:flex',
       { 'h-full': showSidebar }
@@ -74,7 +74,6 @@ const clearAll = () => {
                   {{ hotel.name }}
                   <button
                     data-test="remove-hotel"
-                    v-if="props.comparedHotels.length > 1"
                     @click="() => removeHotelFromComparison(hotel)"
                     class="text-red-500 ml-2"
                   >
@@ -107,7 +106,7 @@ const clearAll = () => {
         </table>
       </div>
     </div>
-  </aside>
+  </div>
 </template>
 
 <style scoped></style>
