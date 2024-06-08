@@ -19,6 +19,7 @@ const userWantsToBookARoom = ref<Hotel | null>(null)
 
 const addToCompare = (hotel: Hotel) => {
   hotelsStore.addHotelToCompare(hotel)
+  notifications.addNotification('success', 'Hotel added to comparison!')
 }
 
 const bookRoom = (hotel: Hotel) => {

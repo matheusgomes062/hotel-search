@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { useHotelsStore } from '@/stores/hotels'
 import type { Hotel } from '@/types'
-import SidebarCompare from '@/components/SidebarCompare.vue'
+import CompareHotels from '@/components/CompareHotels.vue'
 
 const getHotels = (): Hotel[] => [
   {
@@ -47,7 +47,7 @@ describe('Sidebar', () => {
   })
 
   it('renders properly', async () => {
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: getHotels()
       }
@@ -57,7 +57,7 @@ describe('Sidebar', () => {
     expect(wrapper.text()).toContain('Compare Hotels')
   })
   it('toggles sidebar visibility when button is clicked', async () => {
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: getHotels()
       }
@@ -70,7 +70,7 @@ describe('Sidebar', () => {
   })
 
   it('clears all compared hotels when Clear All button is clicked', async () => {
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: getHotels()
       }
@@ -88,7 +88,7 @@ describe('Sidebar', () => {
 
   it('removes a hotel from comparison when Remove button is clicked', async () => {
     const hotelToRemove = getHotels()[0]
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: [hotelToRemove]
       }
@@ -105,7 +105,7 @@ describe('Sidebar', () => {
   })
 
   it('renders the sidebar correctly with no hotels selected for comparison', async () => {
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: []
       }
@@ -116,7 +116,7 @@ describe('Sidebar', () => {
 
   it('renders the sidebar correctly with hotels selected for comparison', async () => {
     const hotels = getHotels()
-    const wrapper = mount(SidebarCompare, {
+    const wrapper = mount(CompareHotels, {
       props: {
         comparedHotels: hotels
       }
