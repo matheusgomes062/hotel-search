@@ -24,7 +24,12 @@ const removeFromCompare = (hotel: Hotel) => {
   <div class="flex flex-row">
     <div class="container page py-4">
       <div class="bg-violet-300 rounded-xl py-6 flex flex-col items-center text-center">
-        <img src="https://img.logoipsum.com/286.svg" alt="Hotel-Logo" class="w-60" />
+        <img
+          aria-label="Hotel-Logo"
+          src="https://img.logoipsum.com/286.svg"
+          alt="Hotel-Logo"
+          class="w-60"
+        />
       </div>
       <h1
         class="text-black self-center justify-center flex mt-12 mb-8 text-3xl md:text-6xl font-medium"

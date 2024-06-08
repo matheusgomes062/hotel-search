@@ -28,7 +28,7 @@ const clearAll = () => {
 </script>
 
 <template>
-  <aside
+  <div
     :class="[
       'inset-y-0 left-0 h-fit flex-col p-4 bg-background transition-all duration-300 shadow-md rounded-md sm:flex',
       { 'h-full': showSidebar }
@@ -38,6 +38,7 @@ const clearAll = () => {
       <div class="flex flex-row gap-4">
         <button
           data-test="toggle-sidebar"
+          aria-label="Toggle Sidebar"
           @click="toggleSidebar"
           class="flex h-9 w-9 items-center justify-center self-start rounded-lg bg-violet-600"
         >
@@ -105,7 +106,7 @@ const clearAll = () => {
         </table>
       </div>
     </div>
-  </aside>
+  </div>
 </template>
 
 <style scoped></style>
