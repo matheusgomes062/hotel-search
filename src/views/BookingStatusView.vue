@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
-import type { Hotel } from '@/types'
+import { LoaderCircle } from 'lucide-vue-next'
 
 const hotelStore = useHotelsStore()
 const loading = ref(false)
@@ -13,26 +13,7 @@ const bookedHotels = hotelStore.getBookedHotels
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
       <h1 class="text-xl font-bold mb-4">Booking Status</h1>
       <div v-if="loading" class="flex justify-center items-center">
-        <svg
-          class="animate-spin h-5 w-5 text-gray-500"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
-          ></path>
-        </svg>
+        <LoaderCircle class="animate-spin h-5 w-5 text-gray-500" />
         <span class="ml-2 text-gray-500">Loading...</span>
       </div>
       <div v-else-if="bookedHotels">
