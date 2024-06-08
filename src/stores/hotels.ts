@@ -1,16 +1,18 @@
-import { defineStore } from 'pinia'
-import type { Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
+import { acceptHMRUpdate, defineStore } from 'pinia'
+import type { HotelStore, Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
 
 export const useHotelsStore = defineStore({
   id: 'hotels',
-  state: () => ({
-    hotels: [] as Hotel[],
-    originalHotels: [] as Hotel[],
-    isLoading: false,
-    hasError: false,
-    compareList: [] as Hotel[],
-    bookedHotels: [] as HotelBookingParams[]
-  }),
+  state: (): HotelStore => {
+    return {
+      hotels: [],
+      originalHotels: [],
+      isLoading: false,
+      hasError: false,
+      compareList: [],
+      bookedHotels: []
+    }
+  },
   actions: {
     async fetchHotels(params?: HotelSearchParams) {
       this.isLoading = true
@@ -91,3 +93,7 @@ export const useHotelsStore = defineStore({
     getHasBookingStatus: (state) => state.bookedHotels.length > 0
   }
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useHotelsStore, import.meta.hot))
+}

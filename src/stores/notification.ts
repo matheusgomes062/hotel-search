@@ -1,10 +1,5 @@
 import { reactive } from 'vue'
-
-export interface Notification {
-  id: number
-  type: 'success' | 'error' | 'info'
-  message: string
-}
+import type { Notification } from '@/types'
 
 const notifications = reactive<Notification[]>([])
 
