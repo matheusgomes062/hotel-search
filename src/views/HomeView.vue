@@ -34,9 +34,9 @@ const removeFromCompare = (hotel: Hotel) => {
       <h1 class="text-black self-center justify-center flex mt-12 mb-8 text-4xl font-medium">
         Find the right hotel for you!
       </h1>
-      <div class="row">
+      <div>
         <div class="gap-2 flex flex-col">
-          <div>
+          <div class="flex flex-col items-center justify-center mb-4">
             <HotelSearch />
             <div
               class="flex flex-row gap-4 p-4 my-4 bg-background shadow-md rounded-md"
@@ -56,7 +56,7 @@ const removeFromCompare = (hotel: Hotel) => {
           <div v-else-if="hotelsStore.hasError" class="text-center text-red-500">
             <p>Error loading hotels. Please try again later.</p>
           </div>
-          <div v-else class="flex flex-row gap-4 w-full justify-end">
+          <div v-else class="flex flex-row gap-4 w-full justify-end mt-4">
             <HotelListResult
               class="w-full"
               :hotels="hotelsStore.hotels"

@@ -43,9 +43,11 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="">
+  <div class="w-full">
     <form @submit.prevent="handleSubmit" class="flex flex-col flex-wrap gap-4">
-      <div class="form-group w-full rounded-full bg-white items-center px-10 py-5 border">
+      <div
+        class="form-group w-full rounded-xl md:rounded-full bg-white items-center px-5 md:px-10 py-2 md:py-5 border"
+      >
         <label for="destination" class="block text-sm font-medium text-gray-700"
           >Destination:</label
         >
@@ -60,9 +62,9 @@ const handleSubmit = async () => {
       </div>
 
       <div
-        class="form-group w-full flex flex-row rounded-full bg-white items-center px-10 py-5 border justify-between"
+        class="form-group w-full flex flex-col md:flex-row gap-4 md:gap-0 rounded-xl md:rounded-full bg-white items-center px-5 md:px-10 py-2 md:py-5 border justify-between"
       >
-        <div class="w-auto border-r pr-8 border-gray-300">
+        <div class="w-full md:w-auto md:border-r md:pr-8 border-gray-300 ml-4">
           <label for="checkIn" class="block text-sm font-medium text-gray-700"
             >Check-In Date:</label
           >
@@ -76,7 +78,7 @@ const handleSubmit = async () => {
           />
         </div>
 
-        <div class="w-auto border-r pr-8 border-gray-300">
+        <div class="w-full md:w-auto md:border-r md:pr-8 border-gray-300 ml-4">
           <label for="checkOut" class="block text-sm font-medium text-gray-700"
             >Check-Out Date:</label
           >
@@ -90,8 +92,8 @@ const handleSubmit = async () => {
           />
         </div>
 
-        <div class="w-auto grid grid-cols-2 gap-4">
-          <div class="border-r pr-8 border-gray-300">
+        <div class="w-full md:w-auto grid grid-cols-2 gap-4">
+          <div class="border-r md:pr-8 border-gray-300 ml-4">
             <label for="roomCount" class="block text-sm font-medium text-gray-700">Rooms:</label>
             <input
               type="number"
@@ -103,7 +105,7 @@ const handleSubmit = async () => {
             />
           </div>
 
-          <div class="border-r pr-8 border-gray-300">
+          <div class="md:border-r md:pr-8 border-gray-300 ml-4">
             <label for="guestCount" class="block text-sm font-medium text-gray-700">Guests:</label>
             <input
               type="number"
@@ -119,7 +121,7 @@ const handleSubmit = async () => {
         <button
           type="submit"
           data-test="search-button"
-          class="px-4 h-10 text-white font-semibold rounded-full shadow bg-violet-600 hover:bg-violet-700"
+          class="w-full md:w-auto ml-4 px-4 h-10 text-white font-semibold rounded-full shadow bg-violet-600 hover:bg-violet-700"
         >
           Search
         </button>
