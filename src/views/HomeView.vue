@@ -9,6 +9,8 @@ import { useHotelsStore } from '@/stores/hotels'
 import type { Hotel } from '@/types'
 
 const hotelsStore = useHotelsStore()
+const bookingStatus = hotelsStore.getBookedHotels
+// const bookingStatus = true
 
 onMounted(() => {
   hotelsStore.fetchHotels()
@@ -34,6 +36,15 @@ const removeFromCompare = (hotel: Hotel) => {
         <div class="gap-2 flex flex-col">
           <div>
             <HotelSearch />
+            <div
+              class="flex flex-row gap-4 p-4 my-4 bg-background shadow-md rounded-md"
+              v-if="bookingStatus.length > 0"
+            >
+              <p>Check your booking status here!</p>
+              <router-link to="/booking-status" class="text-blue-500 font-bold hover:underline"
+                >Booking Status</router-link
+              >
+            </div>
             <HotelListFilters />
           </div>
           <SidebarCompare :comparedHotels="hotelsStore.compareList" />
