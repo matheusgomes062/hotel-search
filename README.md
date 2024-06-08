@@ -5,7 +5,7 @@
     <h1 align="center">HOTEL-SEARCH-CHALLENGE</h1>
 </p>
 <p align="center">
-    <em>HTTP error 429 for prompt `slogan`</em>
+    <em>Find the best hotel for you!</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/matheusgomes062/hotel-search-challenge?style=flat&color=0080ff" alt="license">
@@ -53,13 +53,18 @@
 
 ## 📍 Overview
 
-HTTP error 429 for prompt `overview`
+The hotel-search-challenge is a web application designed to help users find the best hotels according to their preferences. The application offers various features, such as searching for hotels, applying filters, comparing different hotels, and booking rooms. It utilizes modern web development tools and frameworks, ensuring a smooth and efficient user experience.
 
 ---
 
 ## 📦 Features
 
-HTTP error 429 for prompt `features`
+Hotel Search: Easily search for hotels by name, location, or other criteria.
+Filtering Options: Apply filters to narrow down the search results based on price, rating, amenities, etc.
+Hotel Comparison: Compare multiple hotels side by side to make an informed decision.
+Room Booking: Book rooms directly from the application.
+Responsive Design: Accessible on various devices, ensuring a seamless user experience across different screen sizes.
+Notifications: Get notified about booking status, errors, and other important updates.
 
 ---
 
@@ -130,121 +135,121 @@ HTTP error 429 for prompt `features`
 
 ## 🧩 Modules
 
-<details closed><summary>.</summary>
+<details closed><summary>Modules</summary>
 
-| File                                                                                                                                                                                       | Summary                                                                              |
-| ---                                                                                                                                                                                        | ---                                                                                  |
-| [tsconfig.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/tsconfig.json)                                                                                       | HTTP error 429 for prompt `tsconfig.json`                                            |
-| [index.html](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/index.html)                                                                                             | HTTP error 429 for prompt `index.html`                                               |
-| [postcss.config.js](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/postcss.config.js)                                                                               | HTTP error 429 for prompt `postcss.config.js`                                        |
-| [tsconfig.app.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/tsconfig.app.json)                                                                               | HTTP error 429 for prompt `tsconfig.app.json`                                        |
-| [tsconfig.vitest.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/tsconfig.vitest.json)                                                                         | HTTP error 429 for prompt `tsconfig.vitest.json`                                     |
-| [vite.config.ts.timestamp-1717823268952-bf559d31ce9e4.mjs](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/vite.config.ts.timestamp-1717823268952-bf559d31ce9e4.mjs) | HTTP error 429 for prompt `vite.config.ts.timestamp-1717823268952-bf559d31ce9e4.mjs` |
-| [vite.config.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/vite.config.ts)                                                                                     | HTTP error 429 for prompt `vite.config.ts`                                           |
-| [package.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/package.json)                                                                                         | HTTP error 429 for prompt `package.json`                                             |
-| [vitest.config.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/vitest.config.ts)                                                                                 | HTTP error 429 for prompt `vitest.config.ts`                                         |
-| [tsconfig.node.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/tsconfig.node.json)                                                                             | HTTP error 429 for prompt `tsconfig.node.json`                                       |
-| [tailwind.config.js](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/tailwind.config.js)                                                                             | HTTP error 429 for prompt `tailwind.config.js`                                       |
-| [env.d.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/env.d.ts)                                                                                                 | HTTP error 429 for prompt `env.d.ts`                                                 |
-| [pnpm-lock.yaml](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/pnpm-lock.yaml)                                                                                     | HTTP error 429 for prompt `pnpm-lock.yaml`                                           |
+| File                                                                                                                     | Summary                                      |
+| ---                                                                                                                      | ---                                          |
+| `tsconfig.json`                                                                                                          | TypeScript configuration file.               |
+| `index.html`                                                                                                             | Main HTML file for the project.               |
+| `postcss.config.js`                                                                                                      | PostCSS configuration file.                  |
+| `tsconfig.app.json`                                                                                                      | TypeScript configuration for the app.        |
+| `tsconfig.vitest.json`                                                                                                   | TypeScript configuration for Vitest.         |
+| `vite.config.ts.timestamp-1717823268952-bf559d31ce9e4.mjs`                                                               | Vite configuration with a timestamp.         |
+| `vite.config.ts`                                                                                                         | Vite configuration file.                     |
+| `package.json`                                                                                                           | Project dependencies and scripts.            |
+| `vitest.config.ts`                                                                                                       | Vitest configuration file.                   |
+| `tsconfig.node.json`                                                                                                     | TypeScript configuration for Node.js.        |
+| `tailwind.config.js`                                                                                                     | Tailwind CSS configuration file.             |
+| `env.d.ts`                                                                                                               | TypeScript definitions for environment variables. |
+| `pnpm-lock.yaml`                                                                                                         | Lockfile for pnpm package manager.           |
 
 </details>
 
 <details closed><summary>api</summary>
 
-| File                                                                                                 | Summary                                     |
-| ---                                                                                                  | ---                                         |
-| [hotels.json](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/api/hotels.json) | HTTP error 429 for prompt `api/hotels.json` |
+| File                                 | Summary                              |
+| ---                                  | ---                                  |
+| `api/hotels.json`                    | JSON file containing hotel data.     |
 
 </details>
 
 <details closed><summary>.github.workflows</summary>
 
-| File                                                                                                                             | Summary                                                          |
-| ---                                                                                                                              | ---                                                              |
-| [github-actions.yml](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/.github/workflows/github-actions.yml) | HTTP error 429 for prompt `.github/workflows/github-actions.yml` |
-| [ci.yml](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/.github/workflows/ci.yml)                         | HTTP error 429 for prompt `.github/workflows/ci.yml`             |
+| File                                     | Summary                                |
+| ---                                      | ---                                    |
+| `.github/workflows/github-actions.yml`   | Configuration for GitHub Actions.      |
+| `.github/workflows/ci.yml`               | Continuous Integration workflow file.  |
 
 </details>
 
 <details closed><summary>src</summary>
 
-| File                                                                                         | Summary                                 |
-| ---                                                                                          | ---                                     |
-| [App.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/App.vue) | HTTP error 429 for prompt `src/App.vue` |
-| [main.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/main.ts) | HTTP error 429 for prompt `src/main.ts` |
+| File                       | Summary                            |
+| ---                        | ---                                |
+| `src/App.vue`              | Main Vue.js component.             |
+| `src/main.ts`              | Entry point for the application.   |
 
 </details>
 
 <details closed><summary>src.router</summary>
 
-| File                                                                                                  | Summary                                         |
-| ---                                                                                                   | ---                                             |
-| [index.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/router/index.ts) | HTTP error 429 for prompt `src/router/index.ts` |
+| File                         | Summary                               |
+| ---                          | ---                                   |
+| `src/router/index.ts`        | Vue Router configuration.            |
 
 </details>
 
 <details closed><summary>src.types</summary>
 
-| File                                                                                                     | Summary                                          |
-| ---                                                                                                      | ---                                              |
-| [index.d.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/types/index.d.ts) | HTTP error 429 for prompt `src/types/index.d.ts` |
+| File                             | Summary                                  |
+| ---                              | ---                                      |
+| `src/types/index.d.ts`           | TypeScript type definitions.             |
 
 </details>
 
 <details closed><summary>src.components</summary>
 
-| File                                                                                                                                    | Summary                                                            |
-| ---                                                                                                                                     | ---                                                                |
-| [ToastNotification.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/ToastNotification.vue)     | HTTP error 429 for prompt `src/components/ToastNotification.vue`   |
-| [CompareHotels.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/CompareHotels.vue)             | HTTP error 429 for prompt `src/components/CompareHotels.vue`       |
-| [HotelListResult.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/HotelListResult.vue)         | HTTP error 429 for prompt `src/components/HotelListResult.vue`     |
-| [HotelCard.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/HotelCard.vue)                     | HTTP error 429 for prompt `src/components/HotelCard.vue`           |
-| [HotelComposableCard.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/HotelComposableCard.vue) | HTTP error 429 for prompt `src/components/HotelComposableCard.vue` |
-| [HotelListFilters.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/HotelListFilters.vue)       | HTTP error 429 for prompt `src/components/HotelListFilters.vue`    |
-| [BookRoomModal.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/BookRoomModal.vue)             | HTTP error 429 for prompt `src/components/BookRoomModal.vue`       |
-| [HotelSearch.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/HotelSearch.vue)                 | HTTP error 429 for prompt `src/components/HotelSearch.vue`         |
+| File                                     | Summary                                        |
+| ---                                      | ---                                            |
+| `src/components/ToastNotification.vue`   | Component for toast notifications.             |
+| `src/components/CompareHotels.vue`       | Component for comparing hotels.                |
+| `src/components/HotelListResult.vue`     | Component for displaying hotel list results.   |
+| `src/components/HotelCard.vue`           | Component for a single hotel card.             |
+| `src/components/HotelComposableCard.vue` | Composable hotel card component.               |
+| `src/components/HotelListFilters.vue`    | Component for hotel list filters.              |
+| `src/components/BookRoomModal.vue`       | Modal component for booking rooms.             |
+| `src/components/HotelSearch.vue`         | Component for hotel search functionality.      |
 
 </details>
 
 <details closed><summary>src.components.__tests__</summary>
 
-| File                                                                                                                                                | Summary                                                                       |
-| ---                                                                                                                                                 | ---                                                                           |
-| [hotelSearch.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/hotelSearch.spec.ts)           | HTTP error 429 for prompt `src/components/__tests__/hotelSearch.spec.ts`      |
-| [compareHotels.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/compareHotels.spec.ts)       | HTTP error 429 for prompt `src/components/__tests__/compareHotels.spec.ts`    |
-| [hotelListResult.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/hotelListResult.spec.ts)   | HTTP error 429 for prompt `src/components/__tests__/hotelListResult.spec.ts`  |
-| [hotelCard.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/hotelCard.spec.ts)               | HTTP error 429 for prompt `src/components/__tests__/hotelCard.spec.ts`        |
-| [hotelListFilters.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/hotelListFilters.spec.ts) | HTTP error 429 for prompt `src/components/__tests__/hotelListFilters.spec.ts` |
-| [bookRoomModal.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/components/__tests__/bookRoomModal.spec.ts)       | HTTP error 429 for prompt `src/components/__tests__/bookRoomModal.spec.ts`    |
+| File                                     | Summary                                        |
+| ---                                      | ---                                            |
+| `src/components/__tests__/hotelSearch.spec.ts` | Unit tests for hotel search component.         |
+| `src/components/__tests__/compareHotels.spec.ts` | Unit tests for compare hotels component.       |
+| `src/components/__tests__/hotelListResult.spec.ts` | Unit tests for hotel list result component.   |
+| `src/components/__tests__/hotelCard.spec.ts` | Unit tests for hotel card component.           |
+| `src/components/__tests__/hotelListFilters.spec.ts` | Unit tests for hotel list filters component. |
+| `src/components/__tests__/bookRoomModal.spec.ts` | Unit tests for book room modal component.      |
 
 </details>
 
 <details closed><summary>src.stores</summary>
 
-| File                                                                                                                | Summary                                                |
-| ---                                                                                                                 | ---                                                    |
-| [hotels.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/stores/hotels.spec.ts)   | HTTP error 429 for prompt `src/stores/hotels.spec.ts`  |
-| [notification.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/stores/notification.ts) | HTTP error 429 for prompt `src/stores/notification.ts` |
-| [hotels.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/stores/hotels.ts)             | HTTP error 429 for prompt `src/stores/hotels.ts`       |
+| File                         | Summary                                  |
+| ---                          | ---                                      |
+| `src/stores/hotels.spec.ts`  | Unit tests for hotels store.             |
+| `src/stores/notification.ts` | Store for handling notifications.        |
+| `src/stores/hotels.ts`       | Store for handling hotels data.          |
 
 </details>
 
 <details closed><summary>src.stores.__tests__</summary>
 
-| File                                                                                                                        | Summary                                                         |
-| ---                                                                                                                         | ---                                                             |
-| [hotels.spec.ts](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/stores/__tests__/hotels.spec.ts) | HTTP error 429 for prompt `src/stores/__tests__/hotels.spec.ts` |
+| File                                 | Summary                                        |
+| ---                                  | ---                                            |
+| `src/stores/__tests__/hotels.spec.ts`| Unit tests for hotels store.                   |
 
 </details>
 
 <details closed><summary>src.views</summary>
 
-| File                                                                                                                           | Summary                                                     |
-| ---                                                                                                                            | ---                                                         |
-| [HomeView.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/views/HomeView.vue)                   | HTTP error 429 for prompt `src/views/HomeView.vue`          |
-| [BookingStatusView.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/views/BookingStatusView.vue) | HTTP error 429 for prompt `src/views/BookingStatusView.vue` |
-| [ErrorView.vue](https://github.com/matheusgomes062/hotel-search-challenge/blob/master/src/views/ErrorView.vue)                 | HTTP error 429 for prompt `src/views/ErrorView.vue`         |
+| File                                 | Summary                                        |
+| ---                                  | ---                                            |
+| `src/views/HomeView.vue`             | View component for the home page.              |
+| `src/views/BookingStatusView.vue`    | View component for booking status page.        |
+| `src/views/ErrorView.vue`            | View component for error page.                 |
 
 </details>
 
