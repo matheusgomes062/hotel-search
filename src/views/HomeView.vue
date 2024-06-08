@@ -28,10 +28,12 @@ const removeFromCompare = (hotel: Hotel) => {
 <template>
   <div class="flex flex-row">
     <div class="container page py-4">
-      <div class="bg-indigo-300 rounded-lg py-16 flex flex-col items-center text-center">
-        <h1 class="logo-font text-2xl font-bold text-gray-800">Hotel Search</h1>
-        <p class="text-gray-600 mb-4">Search the best hotel for your trip!</p>
+      <div class="bg-violet-300 rounded-xl py-6 flex flex-col items-center text-center">
+        <img src="https://img.logoipsum.com/286.svg" alt="Hotel-Logo" class="w-60" />
       </div>
+      <h1 class="text-black self-center justify-center flex mt-12 mb-8 text-4xl font-medium">
+        Find the right hotel for you!
+      </h1>
       <div class="row">
         <div class="gap-2 flex flex-col">
           <div>
