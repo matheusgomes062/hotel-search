@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
-import { ChevronUp, ChevronDown, XCircle } from 'lucide-vue-next'
+import { ChevronUp, ChevronDown, SquareX } from 'lucide-vue-next'
 import type { Hotel } from '@/types'
 
 const props = defineProps({
@@ -64,41 +64,58 @@ const clearAll = () => {
         <table class="w-full border-collapse">
           <thead>
             <tr>
-              <th class="border p-2 bg-blue-100">Property</th>
-              <th
-                v-for="hotel in props.comparedHotels"
-                :key="hotel.id"
-                class="border p-2 bg-blue-100"
-              >
-                <div class="flex justify-between items-center">
-                  {{ hotel.name }}
-                  <button
-                    data-test="remove-hotel"
-                    @click="() => removeHotelFromComparison(hotel)"
-                    class="text-red-500 ml-2"
+              <th class="border-r border-b border-gray-200">Property</th>
+              <th v-for="hotel in props.comparedHotels" :key="hotel.id" class="border-r">
+                <div class="relative flex items-center justify-center">
+                  <div
+                    class="relative flex flex-col items-center justify-center w-full h-12 overflow-hidden"
                   >
-                    <XCircle class="w-4 h-4" />
-                  </button>
+                    <img
+                      :src="hotel.imageUrl"
+                      class="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-black opacity-40"></div>
+                    <span class="relative z-10 text-white drop-shadow-lg">{{ hotel.name }}</span>
+                    <button
+                      data-test="remove-hotel"
+                      @click="() => removeHotelFromComparison(hotel)"
+                      class="absolute top-1 right-1 text-white hover:text-red-700 z-10"
+                    >
+                      <SquareX class="w-5 h-5 fill-red-500" />
+                    </button>
+                  </div>
                 </div>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="border p-2 bg-gray-100">Stars</td>
-              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+              <td class="border-r border-b p-2">Stars</td>
+              <td
+                v-for="hotel in props.comparedHotels"
+                :key="hotel.id"
+                class="border p-2 text-center"
+              >
                 {{ hotel.stars }}
               </td>
             </tr>
             <tr>
-              <td class="border p-2 bg-gray-100">Price</td>
-              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+              <td class="border-r border-b p-2">Price</td>
+              <td
+                v-for="hotel in props.comparedHotels"
+                :key="hotel.id"
+                class="border p-2 text-center"
+              >
                 {{ hotel.price }}
               </td>
             </tr>
             <tr>
-              <td class="border p-2 bg-gray-100">Rooms</td>
-              <td v-for="hotel in props.comparedHotels" :key="hotel.id" class="border p-2">
+              <td class="border-r border-b p-2">Rooms</td>
+              <td
+                v-for="hotel in props.comparedHotels"
+                :key="hotel.id"
+                class="border p-2 text-center"
+              >
                 {{ hotel.roomCount }}
               </td>
             </tr>

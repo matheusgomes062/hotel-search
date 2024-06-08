@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/booking-status',
       name: 'booking-status',
       component: () => import('../views/BookingStatusView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'ErrorView',
+      component: () => import('../views/ErrorView.vue')
     }
   ]
 })

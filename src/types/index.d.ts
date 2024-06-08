@@ -45,3 +45,18 @@ export interface HotelBookingParams {
   roomCount: number
   guestCount: number
 }
+
+export interface Notification {
+  id: number
+  type: 'success' | 'error' | 'info'
+  message: string
+}
+
+export interface HotelStore {
+  hotels: Hotel[]
+  originalHotels: Hotel[]
+  compareList: Hotel[]
+  bookedHotels: HotelBookingParams[]
+  isLoading: boolean
+  hasError: boolean
+}

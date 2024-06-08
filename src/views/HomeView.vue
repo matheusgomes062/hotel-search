@@ -2,7 +2,7 @@
 import HotelSearch from '@/components/HotelSearch.vue'
 import HotelListFilters from '@/components/HotelListFilters.vue'
 import HotelListResult from '@/components/HotelListResult.vue'
-import SidebarCompare from '@/components/SidebarCompare.vue'
+import CompareHotels from '@/components/CompareHotels.vue'
 
 import { onMounted } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
@@ -42,7 +42,7 @@ const removeFromCompare = (hotel: Hotel) => {
             <HotelSearch />
             <HotelListFilters />
           </div>
-          <SidebarCompare :comparedHotels="hotelsStore.compareList" />
+          <CompareHotels :comparedHotels="hotelsStore.compareList" />
           <div v-if="hotelsStore.isLoading" class="text-center">
             <p>Loading hotels...</p>
           </div>
