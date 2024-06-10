@@ -343,6 +343,8 @@ pnpm run serve
 - [x] `► Documentation`
 - [IN PROGRESS] `► Improve Vue 3 usage`
 - [IN PROGRESS] `► Improve Typings`
+- [ ] `► Footer`
+- [ ] `► Login`
 - [ ] `► Add a node.js server`
 - [ ] `► Add mongodb`
 - [ ] `► Storybook`
