@@ -356,7 +356,7 @@ Contributions are welcome! Here are several ways you can contribute:
 
 - **[Submit Pull Requests](https://github.com/matheusgomes062/hotel-search/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
 - **[Join the Discussions](https://github.com/matheusgomes062/hotel-search/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/matheusgomes062/hotel-search/issues)**: Submit bugs found or log feature requests for Hotel-search-challenge.
+- **[Report Issues](https://github.com/matheusgomes062/hotel-search/issues)**: Submit bugs found or log feature requests for Hotel-search.
 
 <details closed>
     <summary>Contributing Guidelines</summary>
