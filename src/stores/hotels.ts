@@ -1,5 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import type { HotelStore, Hotel, HotelBookingParams, HotelSearchParams } from '@/types'
+const VITE_API_URL = import.meta.env.VITE_API_URL
 
 export const useHotelsStore = defineStore({
   id: 'hotels',
@@ -22,7 +23,7 @@ export const useHotelsStore = defineStore({
         const queryParams = new URLSearchParams(
           restParams as unknown as Record<string, string>
         ).toString()
-        const url = `http://localhost:3000/hotels?${queryParams}`
+        const url = `${VITE_API_URL}/hotels?${queryParams}`
         const response = await fetch(url)
 
         if (!response.ok) throw new Error('Failed to fetch hotels')
