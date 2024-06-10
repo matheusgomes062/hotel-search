@@ -2,16 +2,16 @@
   <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
 </p>
 <p align="center">
-    <h1 align="center">HOTEL-SEARCH-CHALLENGE</h1>
+    <h1 align="center">HOTEL-SEARCH</h1>
 </p>
 <p align="center">
     <em>Find the best hotel for you!</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/matheusgomes062/hotel-search-challenge?style=flat&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/matheusgomes062/hotel-search-challenge?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/matheusgomes062/hotel-search-challenge?style=flat&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/matheusgomes062/hotel-search-challenge?style=flat&color=0080ff" alt="repo-language-count">
+	<img src="https://img.shields.io/github/license/matheusgomes062/hotel-search?style=flat&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/matheusgomes062/hotel-search?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/matheusgomes062/hotel-search?style=flat&color=0080ff" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/matheusgomes062/hotel-search?style=flat&color=0080ff" alt="repo-language-count">
 <p>
 <p align="center">
 		<em>Developed with the software and tools below.</em>
@@ -42,7 +42,7 @@
 > - [🧩 Modules](#-modules)
 > - [🚀 Getting Started](#-getting-started)
 >   - [⚙️ Installation](#️-installation)
->   - [🤖 Running hotel-search-challenge](#-running-hotel-search-challenge)
+>   - [🤖 Running hotel-search](#-running-hotel-search)
 >   - [🧪 Tests](#-tests)
 > - [🛠 Project Roadmap](#-project-roadmap)
 > - [🤝 Contributing](#-contributing)
@@ -50,16 +50,16 @@
 > - [👏 Acknowledgments](#-acknowledgments)
 
 ---
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/b96dd670-16ab-4393-8660-cb19b6f3b152)
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/3d3883f8-ad7b-401b-bd18-5a8bb4041684)
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/f54ae490-3335-4fc5-a04b-188e5fa4a787)
-![image](https://github.com/matheusgomes062/hotel-search-challenge/assets/47605309/62e26e0d-0060-49db-a1de-39149a987340)
+![image](https://github.com/matheusgomes062/hotel-search/assets/47605309/b96dd670-16ab-4393-8660-cb19b6f3b152)
+![image](https://github.com/matheusgomes062/hotel-search/assets/47605309/3d3883f8-ad7b-401b-bd18-5a8bb4041684)
+![image](https://github.com/matheusgomes062/hotel-search/assets/47605309/f54ae490-3335-4fc5-a04b-188e5fa4a787)
+![image](https://github.com/matheusgomes062/hotel-search/assets/47605309/62e26e0d-0060-49db-a1de-39149a987340)
 
 
 
 ## 📍 Overview
 
-The hotel-search-challenge is a web application designed to help users find the best hotels according to their preferences. The application offers various features, such as searching for hotels, applying filters, comparing different hotels, and booking rooms. It utilizes modern web development tools and frameworks, ensuring a smooth and efficient user experience.
+The hotel-search is a web application designed to help users find the best hotels according to their preferences. The application offers various features, such as searching for hotels, applying filters, comparing different hotels, and booking rooms. It utilizes modern web development tools and frameworks, ensuring a smooth and efficient user experience.
 
 ---
 
@@ -77,7 +77,7 @@ Notifications: Get notified about booking status, errors, and other important up
 ## 📂 Repository Structure
 
 ```sh
-└── hotel-search-challenge/
+└── hotel-search/
     ├── .github
     │   └── workflows
     │       ├── ci.yml
@@ -271,16 +271,16 @@ Ensure you have the following dependencies installed on your system:
 
 ### ⚙️ Installation
 
-1. Clone the hotel-search-challenge repository:
+1. Clone the hotel-search repository:
 
 ```sh
-git clone https://github.com/matheusgomes062/hotel-search-challenge
+git clone https://github.com/matheusgomes062/hotel-search
 ```
 
 2. Change to the project directory:
 
 ```sh
-cd hotel-search-challenge
+cd hotel-search
 ```
 
 3. Install the dependencies:
@@ -313,9 +313,9 @@ pnpm test:unit
 pnpm lint
 ```
 
-### 🤖 Running hotel-search-challenge
+### 🤖 Running hotel-search
 
-Use the following command to run hotel-search-challenge:
+Use the following command to run hotel-search:
 
 ```sh
 pnpm dev
@@ -354,9 +354,9 @@ pnpm run serve
 
 Contributions are welcome! Here are several ways you can contribute:
 
-- **[Submit Pull Requests](https://github.com/matheusgomes062/hotel-search-challenge/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-- **[Join the Discussions](https://github.com/matheusgomes062/hotel-search-challenge/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/matheusgomes062/hotel-search-challenge/issues)**: Submit bugs found or log feature requests for Hotel-search-challenge.
+- **[Submit Pull Requests](https://github.com/matheusgomes062/hotel-search/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+- **[Join the Discussions](https://github.com/matheusgomes062/hotel-search/discussions)**: Share your insights, provide feedback, or ask questions.
+- **[Report Issues](https://github.com/matheusgomes062/hotel-search/issues)**: Submit bugs found or log feature requests for Hotel-search-challenge.
 
 <details closed>
     <summary>Contributing Guidelines</summary>
@@ -364,7 +364,7 @@ Contributions are welcome! Here are several ways you can contribute:
 1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
 2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
    ```sh
-   git clone https://github.com/matheusgomes062/hotel-search-challenge
+   git clone https://github.com/matheusgomes062/hotel-search
    ```
 3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
    ```sh
