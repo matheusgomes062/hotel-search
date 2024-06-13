@@ -49,16 +49,13 @@ const handleSubmit = async () => {
       <div
         class="form-group w-full rounded-xl md:rounded-full bg-white items-center px-5 md:px-10 py-2 md:py-5 border"
       >
-        <label for="destination" class="block text-sm font-medium text-gray-700"
-          >Destination:</label
-        >
-        <input
-          type="text"
+        <InputComponent
           id="destination"
-          data-test="destination-input"
           v-model="destination"
+          data-test="destination-input"
+          label="Destination:"
           placeholder="Enter destination"
-          class="text-sm h-8 w-full border-gray-300 outline-none"
+          input-class="text-sm h-8 w-full border-gray-300 outline-none"
         />
       </div>
 
