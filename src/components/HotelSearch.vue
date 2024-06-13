@@ -2,6 +2,7 @@
 import { ref, computed, watch } from 'vue'
 import { useHotelsStore } from '@/stores/hotels'
 import type { HotelSearchParams } from '@/types'
+import InputComponent from './ui/InputComponent.vue'
 
 const hotelsStore = useHotelsStore()
 
@@ -94,26 +95,25 @@ const handleSubmit = async () => {
 
         <div class="w-full md:w-auto grid grid-cols-2 gap-4">
           <div class="border-r md:pr-8 border-gray-300 ml-4">
-            <label for="roomCount" class="block text-sm font-medium text-gray-700">Rooms:</label>
-            <input
-              type="number"
+            <InputComponent
               id="roomCount"
-              data-test="roomCount-input"
               v-model="roomCount"
-              min="1"
-              class="text-sm h-8 w-1/2 outline-none"
+              data-test="roomCount-input"
+              label="Rooms:"
+              type="number"
+              :min="1"
+              input-class="h-8 text-sm w-full outline-none border-none"
             />
           </div>
-
           <div class="md:border-r md:pr-8 border-gray-300 ml-4">
-            <label for="guestCount" class="block text-sm font-medium text-gray-700">Guests:</label>
-            <input
-              type="number"
+            <InputComponent
               id="guestCount"
-              data-test="guestCount-input"
               v-model="guestCount"
-              min="1"
-              class="text-sm h-8 w-1/2 outline-none"
+              data-test="guestCount-input"
+              label="Guests:"
+              type="number"
+              :min="1"
+              input-class="h-8 text-sm w-full outline-none border-none"
             />
           </div>
         </div>

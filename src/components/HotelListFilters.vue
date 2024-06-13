@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import type { OrderOption, FilterFields } from '@/types'
 import { useHotelsStore } from '@/stores/hotels'
+import InputComponent from './ui/InputComponent.vue'
 
 const hotelsStore = useHotelsStore()
 const isFilterOpen = ref<boolean>(false)
@@ -62,12 +63,12 @@ const hangleToggleFilters = () => {
         </div>
         <div class="w-full md:w-auto" v-for="field in filterFields" :key="field.name">
           <label :for="field.name" class="block mb-2 font-medium">{{ field.label }}:</label>
-          <input
+          <InputComponent
             v-model.number="filters[field.name]"
             :type="field.type"
             :id="field.name"
             :data-test="field.name"
-            class="w-40 p-2 border rounded-md outline-none border-none"
+            input-class="w-full md:w-40 mb-0 p-2 rounded-md outline-none border-none"
             :min="field.min"
             :max="field.max"
           />
@@ -97,10 +98,4 @@ const hangleToggleFilters = () => {
   </button>
 </template>
 
-<style scoped>
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-</style>
+<style scoped></style>

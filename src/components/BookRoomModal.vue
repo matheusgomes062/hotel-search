@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, watch, computed } from 'vue'
 import type { Hotel, HotelBookingParams } from '@/types'
-import { XIcon, StarIcon } from 'lucide-vue-next'
+import { XIcon } from 'lucide-vue-next'
 import { useHotelsStore } from '@/stores/hotels'
 import HotelComposableCard from './HotelComposableCard.vue'
+import InputComponent from './ui/InputComponent.vue'
 
 const hotelsStore = useHotelsStore()
 
@@ -56,6 +57,11 @@ watch(checkInDate, (newCheckInDate) => {
       .split('T')[0]
   }
 })
+
+const nameFocused = ref(false)
+const emailFocused = ref(false)
+const roomCountFocused = ref(false)
+const guestCountFocused = ref(false)
 </script>
 
 <template>
@@ -68,31 +74,34 @@ watch(checkInDate, (newCheckInDate) => {
       >
         <XIcon class="w-6 h-6" />
       </button>
-      <div class="flex flex-col md:flex-row gap-6">
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-6">
         <HotelComposableCard :hotel="props.hotel" />
+        <div class="border-t border-gray-300 md:hidden"></div>
         <form @submit.prevent="submitBooking">
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-            <input
-              type="text"
-              id="name"
-              v-model="name"
-              data-test="name-input"
-              class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              id="email"
-              v-model="email"
-              data-test="email-input"
-              class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
+          <InputComponent
+            id="name"
+            v-model="name"
+            data-test="name-input"
+            label="Name"
+            type="text"
+            required
+            class="mb-4"
+            @focus="() => (nameFocused = true)"
+            :error="!name && nameFocused"
+            :error-message="nameFocused && !name ? 'Name is required' : ''"
+          />
+          <InputComponent
+            id="email"
+            v-model="email"
+            data-test="email-input"
+            label="Email"
+            type="email"
+            required
+            class="mb-4"
+            @focus="() => (emailFocused = true)"
+            :error="!email && emailFocused"
+            :error-message="emailFocused && !email ? 'Email is required' : ''"
+          />
           <div class="mb-4 gap-4 grid grid-cols-2">
             <div>
               <label for="checkInDate" class="block text-sm font-medium text-gray-700"
@@ -124,36 +133,32 @@ watch(checkInDate, (newCheckInDate) => {
             </div>
           </div>
           <div class="mb-4 gap-4 grid grid-cols-2">
-            <div>
-              <label for="roomCount" class="block text-sm font-medium text-gray-700"
-                >Room Count</label
-              >
-              <input
-                type="number"
-                id="roomCount"
-                v-model="roomCount"
-                :min="1"
-                :max="props.hotel.roomCount"
-                data-test="roomCount-input"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                required
-              />
-            </div>
-            <div>
-              <label for="guestCount" class="block text-sm font-medium text-gray-700"
-                >Guests Count</label
-              >
-              <input
-                type="number"
-                id="guestCount"
-                v-model="guestCount"
-                :min="1"
-                :max="props.hotel.guestCount"
-                data-test="guestCount-input"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                required
-              />
-            </div>
+            <InputComponent
+              id="roomCount"
+              v-model="roomCount"
+              label="Room Count"
+              type="number"
+              :min="1"
+              :max="props.hotel.roomCount"
+              data-test="roomCount-input"
+              required
+              @focus="() => (roomCountFocused = true)"
+              class="mb-4"
+              input-class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+            />
+            <InputComponent
+              id="guestCount"
+              v-model="guestCount"
+              label="Guests Count"
+              type="number"
+              :min="1"
+              :max="props.hotel.guestCount"
+              data-test="guestCount-input"
+              required
+              @focus="() => (guestCountFocused = true)"
+              class="mb-4"
+              input-class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+            />
           </div>
           <button
             type="submit"
