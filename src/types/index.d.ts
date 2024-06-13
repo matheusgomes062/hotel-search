@@ -1,4 +1,4 @@
-// HotelListFilters
+import type { InputHTMLAttributes } from 'vue'
 
 export interface OrderOption {
   value: string
@@ -59,4 +59,36 @@ export interface HotelStore {
   bookedHotels: HotelBookingParams[]
   isLoading: boolean
   hasError: boolean
+}
+
+type InputTypes = Extract<
+  InputHTMLAttributes['type'],
+  'text' | 'number' | 'email' | 'password' | 'tel' | 'url'
+>
+
+export interface InputProps {
+  label?: string
+  type?: InputTypes
+  placeholder?: string
+  disabled?: boolean
+  readonly?: boolean
+  clearable?: boolean
+  errorMessage?: string
+  error?: boolean
+  prependIcon?: string
+  appendIcon?: string
+  required?: boolean
+  size: string
+  success: boolean
+  error: boolean
+  inputClass: string
+  min?: number
+  max?: number
+  dataTest: string
+}
+
+export interface LabelProps {
+  id: string
+  error: boolean
+  success: boolean
 }
